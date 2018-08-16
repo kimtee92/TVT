@@ -1,5 +1,10 @@
 export let MENU_ITEM = [
     {
+        path: 'profile',
+        title: 'User Profile',
+        icon: 'user'
+    },
+    {
         path: 'index',
         title: 'Dashboard',
         icon: 'dashboard'
@@ -13,11 +18,6 @@ export let MENU_ITEM = [
         path: 'icon',
         title: 'Icon',
         icon: 'diamond'
-    },
-    {
-        path: 'profile',
-        title: 'User Profile',
-        icon: 'user'
     },
     {
         path: 'ui',
