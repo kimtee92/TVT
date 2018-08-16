@@ -19,11 +19,9 @@
             <td>{{item.enforcer}}</td>
             <td>{{item.fine}}</td>
             <td>{{item.remarks}}</td>
-            <td>
-              <div class="form">
-                  <input class="checkbox" type="checkbox" id="default-checkbox1" checked>
-                  <label class="check-label" for="default-checkbox1"></label>
-              </div>
+            <td>              
+                  <input class="checkbox" type="checkbox" attr.id="{{index}}">
+                  <label class="check-label" for="{{index}}"></label>              
             </td>
           </tr>
         </tbody>
@@ -34,6 +32,9 @@
             autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
             screenReaderCurrentLabel="You're on page">
           </pagination-controls>
+        </div>
+        <div>
+            <button class="btn btn-primary">Payment</button>
         </div>
         <div class="form-group options pages">
           <div class="input-group input-group-sm">
