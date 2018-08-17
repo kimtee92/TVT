@@ -19,22 +19,19 @@
             <td>{{item.enforcer}}</td>
             <td>{{item.fine}}</td>
             <td>{{item.remarks}}</td>
-            <td>              
-                  <input class="checkbox" type="checkbox" attr.id="{{index}}">
-                  <label class="check-label" for="{{index}}"></label>              
+            <td>
+              <input class="checkbox" type="checkbox" attr.id="{{index}}">
+              <label class="check-label" for="{{index}}"></label>
             </td>
           </tr>
         </tbody>
       </table>
-      <form class="pagination-wrapper">
+      <form class="pagination-wrapper" (ngSubmit)="onSubmit()" >
         <div class="form-group pages">
           <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
             autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
             screenReaderCurrentLabel="You're on page">
           </pagination-controls>
-        </div>
-        <div>
-            <a class="btn btn-primary" href="/pages/payment">Settle Selected</a>
         </div>
         <div class="form-group options pages">
           <div class="input-group input-group-sm">
@@ -49,6 +46,8 @@
             </select>
             <span class="input-group-addon addon-right">Per Page</span>
           </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Settle Selected</button>
         </div>
       </form>
     </card>

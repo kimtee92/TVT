@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TablesDataService } from './tablesData.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,9 @@ export class ProfileComponent implements OnInit {
   pageSize = 10;
   pageNumber = 1;
 
-  constructor(private _tablesDataService: TablesDataService) { }
+  constructor(
+    private _tablesDataService: TablesDataService,
+    private router: Router,) { }
 
   ngOnInit() {
     this.loadData();
@@ -23,8 +26,8 @@ export class ProfileComponent implements OnInit {
     this.tableData = this._tablesDataService.DATA;
   }
 
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
+  onSubmit() {    
+    this.router.navigate(["/pages/payment"]);
   }
 
 }

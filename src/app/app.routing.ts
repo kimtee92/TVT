@@ -9,7 +9,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'pages/index'
+    redirectTo: 'pages/profile'
   }
 ];
 
