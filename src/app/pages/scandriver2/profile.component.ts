@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TablesDataService } from './tablesData.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
-  providers: [TablesDataService]
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
   tableData: Array<any>;
@@ -15,24 +13,13 @@ export class ProfileComponent implements OnInit {
   pageNumber = 1;
 
   constructor(
-    private _tablesDataService: TablesDataService,
     private router: Router,) { }
 
-  ngOnInit() {
-    this.loadData();
-  }
-
-  loadData() {
-    this.tableData = this._tablesDataService.DATA;
-  }
+  ngOnInit() {}
 
   onSubmit() {    
     console.log("go to payment");
-    this.router.navigate(["/pages/payment"]);
-  }
-
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
+    this.router.navigate(["/pages/issueticket"]);
   }
 
 }

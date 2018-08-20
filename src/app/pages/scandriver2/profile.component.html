@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-4">
+      <profile></profile>
+    </div>
+    <div class="col-md-8">
+      <form class="pagination-wrapper" (ngSubmit)="onSubmit()" >
+        <div class="row card card-block">
+          <div class="col-md-6 form-group">
+            <label class="control-label">First Name</label>
+            <input type="text" class="form-control" placeholder="John">
+          </div>
+          <div class="col-md-6 form-group">
+            <label class="control-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Smith">
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">Gender</label>
+            <input type="text" class="form-control" placeholder="Male">
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">Nationality</label>
+            <input type="text" class="form-control" placeholder="Australian">
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">Drivers License</label>
+            <input type="text" class="form-control" placeholder="100-000-000">
+          </div>
+          <div class="col-md-6 form-group">
+            <label class="control-label">Contact Number</label>
+            <input type="text" class="form-control" placeholder="0412123456">
+          </div>
+          <div class="col-md-6 form-group">
+            <label class="control-label">Email</label>
+            <input type="text" class="form-control" placeholder="email@adress.com">
+          </div>
+          <div class="col-md-12 form-group">
+            <label class="control-label">Address</label>
+            <textarea class="form-control" placeholder="123 st. suburb city state"></textarea>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="btn-wrap division">
+            <button class="btn btn-lg btn-success btn-with-icon">
+              <i class="fa fa-check fa-fw"></i>Scan Driver</button>
+            <button type="submit" class="btn btn-lg btn-warning btn-with-icon">
+              <i class="fa fa-exclamation-triangle fa-fw"></i>Issue Ticket</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -14,4 +14,9 @@ export let MENU_ITEM = [
         title: 'Scan Driver',
         icon: 'tag'
     },
+    {
+        path: 'scandriver2',
+        title: 'Scan Driver2',
+        icon: 'tag'
+    }
 ];

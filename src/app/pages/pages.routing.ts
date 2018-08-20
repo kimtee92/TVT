@@ -19,6 +19,7 @@ export const childRoutes: Routes = [
             { path: 'violations', loadChildren: './violations/profile.module#ProfileModule' },
             { path: 'payment', loadChildren: './payment/profile.module#ProfileModule' },
             { path: 'scandriver', loadChildren: './scandriver/profile.module#ProfileModule' },
+            { path: 'scandriver2', loadChildren: './scandriver2/profile.module#ProfileModule' },
             { path: 'issueticket', loadChildren: './issueticket/profile.module#ProfileModule' },
             { path: 'form', loadChildren: './form/form.module#FormModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },

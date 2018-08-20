@@ -3,7 +3,7 @@
     <profile></profile>
   </div>
   <div class="col-md-8">
-    <form class="pagination-wrapper" (ngSubmit)="onSubmit()">
+    <form class="pagination-wrapper" (ngSubmit)="onSubmit()" >
       <div class="row card card-block">
         <div class="col-md-6 form-group">
           <label class="control-label">First Name</label>
@@ -40,9 +40,9 @@
       </div>
       <div class="col-md-8">
         <div class="btn-wrap division">
-          <button type="button" class="btn btn-lg btn-success btn-with-icon">
+          <button class="btn btn-lg btn-success btn-with-icon">
             <i class="fa fa-check fa-fw"></i>Scan Driver</button>
-          <button type="button" type="submit" class="btn btn-lg btn-warning btn-with-icon">
+          <button type="submit" class="btn btn-lg btn-warning btn-with-icon">
             <i class="fa fa-exclamation-triangle fa-fw"></i>Issue Ticket</button>
         </div>
       </div>

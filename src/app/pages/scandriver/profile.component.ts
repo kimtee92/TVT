@@ -8,11 +8,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("enter scan driver");
+    
+   }
 
   onSubmit() {    
+    console.log("going to issue ticket");
     this.router.navigate(["/pages/issueticket"]);
   }
 
