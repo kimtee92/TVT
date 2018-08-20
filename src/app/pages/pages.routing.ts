@@ -18,6 +18,7 @@ export const childRoutes: Routes = [
             { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
             { path: 'violations', loadChildren: './violations/profile.module#ProfileModule' },
             { path: 'payment', loadChildren: './payment/profile.module#ProfileModule' },
+            { path: 'scandriver', loadChildren: './scandriver/profile.module#ProfileModule' },
             { path: 'form', loadChildren: './form/form.module#FormModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'ui', loadChildren: './ui/ui.module#UIModule' },

@@ -10,6 +10,11 @@ export let MENU_ITEM = [
         icon: 'table'
     },
     {
+        path: 'scandriver',
+        title: 'Scan Driver',
+        icon: 'tag'
+    },
+    {
         path: 'index',
         title: 'Dashboard',
         icon: 'dashboard'
