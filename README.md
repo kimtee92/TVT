@@ -1,23 +1,12 @@
-
-[![Build Status](https://travis-ci.org/bknds/ng-pi-admin.svg?branch=master)](https://travis-ci.org/bknds/ng-pi-admin)
-
-
-Default | Dark | Light
----|---|---
-![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/default.png) |![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/dark.png) | ![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/light.png)
-
-
+## TVT
+Tvt is a web application focused on siplyfying the process of
+-handing out traffic violation tickets by traffic enforcers
+-settling traffic tickets by drivers
 
 ## Based on
 Angular 4+, Angular CLI, TypeScript, Scss, Bootstrap
 
-## Demo
-
-[Live Demo](http://treesflower.com/ng-pi-admin)
-
-## Getting started
-```
-git clone https://github.com/bknds/ng-pi-admin.git
+## To Run
 
 npm install
 
