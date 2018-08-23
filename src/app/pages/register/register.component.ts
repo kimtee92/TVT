@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -40,6 +41,11 @@ export class RegisterComponent implements OnInit {
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       console.log("invalid registraion form");
+      // swal({
+      //   type: 'error',
+      //   title: 'Error',
+      //   text: 'Registration is invalid!',
+      // });
       return;
     }
 
