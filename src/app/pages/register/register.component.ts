@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
       licenseNo: ['', Validators.required],
       contactNo: ['', Validators.required],
       email: ['', Validators.required],
-      adress: ['', Validators.required]
+      address: ['', Validators.required]
     });
   }
 

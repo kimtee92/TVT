@@ -1,48 +1,50 @@
-<card cardTitle='Please input registration details'>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="col-md-6 form-group">
-      <label class="control-label">User Name</label>
-      <input type="text" formControlName="username" class="form-control" placeholder="username">
-    </div>
-    <div class="col-md-6 form-group">
-      <label class="control-label">Password</label>
-      <input type="password" formControlName="password" class="form-control" placeholder="password">
-    </div>
-    <div class="col-md-6 form-group">
-      <label class="control-label">First Name</label>
-      <input type="text" formControlName="firstName" class="form-control" placeholder="John">
-    </div>
-    <div class="col-md-6 form-group">
-      <label class="control-label">Last Name</label>
-      <input type="text" formControlName="lastName" class="form-control" placeholder="Smith">
-    </div>
-    <div class="col-md-4 form-group">
-      <label class="control-label">Gender</label>
-      <input type="text" formControlName="gender" class="form-control" placeholder="Male">
-    </div>
-    <div class="col-md-4 form-group">
-      <label class="control-label">Nationality</label>
-      <input type="text" formControlName="nationality" class="form-control" placeholder="Australian">
-    </div>
-    <div class="col-md-4 form-group">
-      <label class="control-label">Driver's License</label>
-      <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000">
-    </div>
-    <div class="col-md-6 form-group">
-      <label class="control-label">Contact Number</label>
-      <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456">
-    </div>
-    <div class="col-md-6 form-group">
-      <label class="control-label">Email</label>
-      <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com">
-    </div>
-    <div class="col-md-12 form-group">
-      <label class="control-label">Address</label>
-      <textarea formControlName="address" class="form-control" placeholder="123 st. suburb city state"></textarea>
-    </div>
-    <div class="btn-wrap division">
-      <button type="button" class="btn btn-success btn-with-icon">
-        <i class="fa fa-pencil fa-fw"></i>Register</button>
-    </div>
-  </form>
-</card>
+<div class="register-card">
+  <card cardTitle='Please input registration details'>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6 form-group">
+        <label class="control-label">User Name</label>
+        <input type="text" formControlName="username" class="form-control" placeholder="username">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="control-label">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="password">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="control-label">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" placeholder="John">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="control-label">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" placeholder="Smith">
+      </div>
+      <div class="col-md-4 form-group">
+        <label class="control-label">Gender</label>
+        <input type="text" formControlName="gender" class="form-control" placeholder="Male">
+      </div>
+      <div class="col-md-4 form-group">
+        <label class="control-label">Nationality</label>
+        <input type="text" formControlName="nationality" class="form-control" placeholder="Australian">
+      </div>
+      <div class="col-md-4 form-group">
+        <label class="control-label">Driver's License</label>
+        <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="control-label">Contact Number</label>
+        <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="control-label">Email</label>
+        <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com">
+      </div>
+      <div class="col-md-12 form-group">
+        <label class="control-label">Address</label>
+        <textarea formControlName="address" class="form-control" placeholder="123 st. suburb city state"></textarea>
+      </div>
+      <div class="btn-wrap division">
+        <button type="button" class="btn btn-success btn-with-icon">
+          <i class="fa fa-pencil fa-fw"></i>Register</button>
+      </div>
+    </form>
+  </card>
+</div>

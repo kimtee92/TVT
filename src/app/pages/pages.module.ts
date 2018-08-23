@@ -4,6 +4,7 @@ import { routing } from './pages.routing';
 
 import { LayoutModule } from '../shared/layout.module';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule }    from '@angular/forms';
 
 /* components */
 import { PagesComponent } from './pages.component';
@@ -15,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
         CommonModule,
         LayoutModule,
         SharedModule,
+        ReactiveFormsModule,
         routing
     ],
     declarations: [
