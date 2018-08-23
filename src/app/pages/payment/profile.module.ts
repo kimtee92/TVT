@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { ProfileComponent } from './profile.component';
+import { ProfileComponent } from "./profile.component";
 
 @NgModule({
     imports: [

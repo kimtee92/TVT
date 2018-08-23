@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from "./profile.component";
+import { RegisterComponent } from './register.component';
 
 const childRoutes: Routes = [
     {
         path: '',
-        component: ProfileComponent
+        component: RegisterComponent
     }
 ];
 
