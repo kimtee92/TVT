@@ -27,31 +27,49 @@
       <div class="col-md-12">
         <div class="col-md-4 form-group">
           <label class="control-label">Gender</label>
-          <input type="text" formControlName="gender" class="form-control" placeholder="Male">
+          <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
+          <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+              <div *ngIf="f.gender.errors.required">Gender is required</div>
+          </div>
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Nationality</label>
-          <input type="text" formControlName="nationality" class="form-control" placeholder="Australian">
+          <input type="text" formControlName="nationality" class="form-control" placeholder="Australian" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" />
+          <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+              <div *ngIf="f.nationality.errors.required">Nationality is required</div>
+          </div>
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Driver's License</label>
-          <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000">
+          <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000" [ngClass]="{ 'is-invalid': submitted && f.licenseNo.errors }" />
+          <div *ngIf="submitted && f.licenseNo.errors" class="invalid-feedback">
+              <div *ngIf="f.licenseNo.errors.required">License Number is required</div>
+          </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-6 form-group">
           <label class="control-label">Contact Number</label>
-          <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456">
+          <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456" [ngClass]="{ 'is-invalid': submitted && f.contactNo.errors }" />
+          <div *ngIf="submitted && f.contactNo.errors" class="invalid-feedback">
+              <div *ngIf="f.contactNo.errors.required">Contact Number is required</div>
+          </div>
         </div>
         <div class="col-md-6 form-group">
           <label class="control-label">Email</label>
-          <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com">
+          <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+          </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-12 form-group">
           <label class="control-label">Address</label>
-          <textarea formControlName="address" class="form-control" placeholder="123 st. suburb city state"></textarea>
+          <textarea formControlName="address" class="form-control" placeholder="123 st. suburb city state" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required">Address is required</div>
+          </div>
         </div>
       </div>
       <div class="col-md-12 btn-wrap division form-group">
