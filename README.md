@@ -1,5 +1,5 @@
 # Traffic Violation Ticketing System (TVT)
-TVT is a web-based application which focuses on simplifying the process of
+TVT is a web-based application which focuses on simplifying the process of:
 * issuing traffic violation tickets by traffic enforcers 
 * creating records of traffic violations committed by drivers for monitoring
 * settling traffic tickets based on the corresponding violations by drivers
