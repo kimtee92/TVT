@@ -30,7 +30,15 @@
       <div class="col-md-12">
         <div class="col-md-4 form-group">
           <label class="control-label">Gender</label>
+<<<<<<< HEAD
           <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
+=======
+          <select name="select" id="select1" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+            <option value="option1">Male</option>
+            <option value="option2">Female</option>
+            <option value="option3">Not Specified</option>
+          </select>
+>>>>>>> parent of b8dfb8d... Revert "Revert "dev""
           <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
               <div *ngIf="f.gender.errors.required">Gender is required</div>
           </div>
