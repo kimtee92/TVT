@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('pi-admin', () => {
+describe('tvt', () => {
   let page: AppPage;
 
   beforeEach(() => {
