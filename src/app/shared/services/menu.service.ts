@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MENU_ITEM } from '../../pages/menu.1';
+import { MENU_ITEM } from '../../pages/menu';
 import { Router } from '@angular/router';
 import { GlobalService } from './global.service';
+
+//this module renders the side-bar menu
 
 @Injectable()
 export class menuService {
@@ -14,6 +16,7 @@ export class menuService {
   private node = null;
   private path_item = [];
 
+  //iterate the menu.json file
   protected queryParentNode(json: any, node_id: any) {
     for (let i = 0; i < json.length; i++) {
       if (this.node)
@@ -41,6 +44,7 @@ export class menuService {
     };
   }
 
+  //put route in the displayed links
   protected creatRouterLink(nodeId: any) {
     this.node = null;
     this.parent_node = null;
