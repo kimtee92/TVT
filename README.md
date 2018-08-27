@@ -27,7 +27,7 @@ ng serve
 ```
 Step 4: Run the application on the local device
 ```
-Point your browsers to localhost:4200
+localhost:4200
 ```
 
 ## Built With
