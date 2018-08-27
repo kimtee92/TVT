@@ -2,34 +2,28 @@
 import { HttpClient } from '@angular/common/http';
 
 import { Driver } from '../_models';
-import { Globals } from '../globals';
 
 @Injectable()
 export class DriverService {
-    private api: string;
-
-    constructor(private http: HttpClient, 
-                private  globals: Globals) { 
-                    this.api = globals.api;
-                }
+    constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<Driver[]>(this.api+`/drivers`);
+        return this.http.get<Driver[]>(`http://localhost:3000/drivers`);
     }
 
     getById(id: number) {
-        return this.http.get(this.api+`/drivers/` + id);
+        return this.http.get(`http://localhost:3000/drivers/` + id);
     }
 
     register(driver: Driver) {
-        return this.http.post(this.api+`/drivers/register`, driver);
+        return this.http.post(`http://localhost:3000/drivers/register`, driver);
     }
 
     update(driver: Driver) {
-        return this.http.put(this.api+`/drivers/` + driver.id, driver);
+        return this.http.put(`http://localhost:3000/drivers/` + driver.id, driver);
     }
 
     delete(id: number) {
-        return this.http.delete(this.api+`drivers/` + id);
+        return this.http.delete(`http://localhost:3000/drivers/` + id);
     }
 }
