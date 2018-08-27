@@ -46,40 +46,11 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3dd6565... registration complete
-=======
->>>>>>> parent of 3dd6565... registration complete
-    //      this.loading = true;
-    //      this.userService.register(this.registerForm.value)
-    //          .pipe(first())
-    //          .subscribe(
-    //              data => {
-    //                  this.alertService.success('Registration successful', true);
-    //                  this.router.navigate(['/login']);
-    //              },
-    //              error => {
-    //                  this.alertService.error(error);
-    //                  this.loading = false;
-    //              });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
          this.driverService.register(this.registerForm.value)
              .pipe(first())
              .subscribe(
                  data => {
                   swal({
-<<<<<<< HEAD
-                    //show success alert if register successful
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
                     type: 'success',
                     title: 'Registration Success!',
                     text: '',
@@ -87,23 +58,11 @@ export class RegisterComponent implements OnInit {
                  },
                  error => {
                   swal({
-<<<<<<< HEAD
-                    //show error alert if register is failed
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
                     type: 'error',
                     title: 'Registration Error',
                     text: 'Please refresh page and try again',
                   });
                  });
-<<<<<<< HEAD
->>>>>>> dev
-=======
->>>>>>> parent of 3dd6565... registration complete
-=======
->>>>>>> parent of 3dd6565... registration complete
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
   }
 
 }
