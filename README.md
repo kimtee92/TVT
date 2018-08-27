@@ -38,10 +38,13 @@ Point your browsers to localhost:4200
 ## License
 [MIT license](LICENSE)
 
-## Acknowledgement
-* The template used for this project is from https://github.com/bknds/ng-pi-admin 
-
 ## Images
+These are the sample images of the web components
+
 User Profile | Violation List | Scan Driver
 ---|---|---
 ![](https://raw.githubusercontent.com/kimtee92/tvt/master/tvt1.PNG) |![](https://raw.githubusercontent.com/kimtee92/tvt/master/tvt2.PNG) | ![](https://raw.githubusercontent.com/kimtee92/tvt/master/tvt3.PNG)
+
+## Acknowledgement
+* The template used for this project is from https://github.com/bknds/ng-pi-admin 
+
