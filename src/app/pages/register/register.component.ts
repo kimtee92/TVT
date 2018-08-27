@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import swal from 'sweetalert2';
-import { DriverService } from '../../shared/_services';
 
 @Component({
   selector: 'app-register',
@@ -15,16 +14,15 @@ export class RegisterComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private driverService: DriverService
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],      
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
       licenseNo: ['', Validators.required],
@@ -43,26 +41,26 @@ export class RegisterComponent implements OnInit {
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       console.log("invalid registraion form");
+      // swal({
+      //   type: 'error',
+      //   title: 'Error',
+      //   text: 'Registration is invalid!',
+      // });
       return;
     }
 
-         this.driverService.register(this.registerForm.value)
-             .pipe(first())
-             .subscribe(
-                 data => {
-                  swal({
-                    type: 'success',
-                    title: 'Registration Success!',
-                    text: '',
-                  });
-                 },
-                 error => {
-                  swal({
-                    type: 'error',
-                    title: 'Registration Error',
-                    text: 'Please refresh page and try again',
-                  });
-                 });
+    //      this.loading = true;
+    //      this.userService.register(this.registerForm.value)
+    //          .pipe(first())
+    //          .subscribe(
+    //              data => {
+    //                  this.alertService.success('Registration successful', true);
+    //                  this.router.navigate(['/login']);
+    //              },
+    //              error => {
+    //                  this.alertService.error(error);
+    //                  this.loading = false;
+    //              });
   }
 
 }

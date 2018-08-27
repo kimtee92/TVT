@@ -1,4 +1,4 @@
-export class Driver {
+export class DriverModel {
     id: number;
     username: String;
     password: String;
