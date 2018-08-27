@@ -40,3 +40,8 @@ Point your browsers to localhost:4200
 
 ## Acknowledgement
 * The template used for this project is from https://github.com/bknds/ng-pi-admin 
+
+## Images
+User Profile | Violation List | Scan Driver
+---|---|---
+![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/default.png) |![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/dark.png) | ![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/light.png)
