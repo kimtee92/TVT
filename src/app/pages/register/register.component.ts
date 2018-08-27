@@ -49,6 +49,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+<<<<<<< HEAD
     //      this.loading = true;
     //      this.userService.register(this.registerForm.value)
     //          .pipe(first())
@@ -61,6 +62,27 @@ export class RegisterComponent implements OnInit {
     //                  this.alertService.error(error);
     //                  this.loading = false;
     //              });
+=======
+         this.driverService.register(this.registerForm.value)
+             .pipe(first())
+             .subscribe(
+                 data => {
+                  swal({
+                    //show success alert if register successful
+                    type: 'success',
+                    title: 'Registration Success!',
+                    text: '',
+                  });
+                 },
+                 error => {
+                  swal({
+                    //show error alert if register is failed
+                    type: 'error',
+                    title: 'Registration Error',
+                    text: 'Please refresh page and try again',
+                  });
+                 });
+>>>>>>> dev
   }
 
 }
