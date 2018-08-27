@@ -50,6 +50,9 @@ export class RegisterComponent implements OnInit {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3dd6565... registration complete
     //      this.loading = true;
     //      this.userService.register(this.registerForm.value)
     //          .pipe(first())
@@ -62,6 +65,7 @@ export class RegisterComponent implements OnInit {
     //                  this.alertService.error(error);
     //                  this.loading = false;
     //              });
+<<<<<<< HEAD
 =======
          this.driverService.register(this.registerForm.value)
              .pipe(first())
@@ -83,6 +87,8 @@ export class RegisterComponent implements OnInit {
                   });
                  });
 >>>>>>> dev
+=======
+>>>>>>> parent of 3dd6565... registration complete
   }
 
 }
