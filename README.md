@@ -13,15 +13,19 @@ Install Node.js and npm to set up the development environment.
 ### Installing
 This is the step by step process of how to run this project. 
 
-Step 1: Install API and module dependencies
+Step 1: Clone the repository
+```
+https://github.com/kimtee92/tvt
+```
+Step 2: Install API and module dependencies
 ```
 npm install
 ```
-Step 2: Launch the server
+Step 3: Launch the server
 ```
 ng serve
 ```
-Step 3: Run the application on the local device
+Step 4: Run the application on the local device
 ```
 Point your browsers to localhost:4200
 ```
