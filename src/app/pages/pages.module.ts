@@ -7,13 +7,13 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule }    from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor } from '../shared/_helpers';
+import { JwtInterceptor, ErrorInterceptor } from '../shared/_helpers';
 
 /* components */
 import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { DriverService } from '../shared/_services';
+import { AuthenticationService, DriverService } from '../shared/_services';
 
 @NgModule({
     imports: [
@@ -30,8 +30,10 @@ import { DriverService } from '../shared/_services';
         RegisterComponent
     ],
     providers:[
+        AuthenticationService,
         DriverService,      
-      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     ],
 })
 export class PagesModule { }

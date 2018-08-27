@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
                   swal({
                     type: 'error',
                     title: 'Registration Error',
-                    text: 'Please refresh page and try again',
+                    text: error,
                   });
                  });
   }
