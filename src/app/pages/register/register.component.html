@@ -41,29 +41,11 @@
       <div class="col-md-12">
         <div class="col-md-4 form-group">
           <label class="control-label">Gender</label>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
-=======
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
           <select name="select" id="select1" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
-            <option value="option1">Male</option>
-            <option value="option2">Female</option>
-            <option value="option3">Not Specified</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="not_specified">Not Specified</option>
           </select>
-<<<<<<< HEAD
->>>>>>> parent of b8dfb8d... Revert "Revert "dev""
-=======
-          <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
->>>>>>> parent of 3dd6565... registration complete
-=======
-          <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
->>>>>>> parent of 3dd6565... registration complete
-=======
->>>>>>> parent of 5737e83... Revert "registration complete"
           <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
             <div *ngIf="f.gender.errors.required">Gender is required</div>
           </div>

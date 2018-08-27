@@ -16,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private driverService: DriverService
+    private driverService: DriverService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -55,6 +56,7 @@ export class RegisterComponent implements OnInit {
                     title: 'Registration Success!',
                     text: '',
                   });
+                  this.router.navigate(['/login']);
                  },
                  error => {
                   swal({
