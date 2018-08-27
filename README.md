@@ -12,6 +12,7 @@ Install Node.js and npm to set up the development environment.
 
 ### Installing
 This is the step by step process of how to run this project. 
+
 Step 1: Install API and module dependencies
 ```
 npm install
