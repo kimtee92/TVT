@@ -51,6 +51,9 @@ export class RegisterComponent implements OnInit {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3dd6565... registration complete
 =======
 >>>>>>> parent of 3dd6565... registration complete
     //      this.loading = true;
@@ -65,6 +68,7 @@ export class RegisterComponent implements OnInit {
     //                  this.alertService.error(error);
     //                  this.loading = false;
     //              });
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
          this.driverService.register(this.registerForm.value)
@@ -87,6 +91,8 @@ export class RegisterComponent implements OnInit {
                   });
                  });
 >>>>>>> dev
+=======
+>>>>>>> parent of 3dd6565... registration complete
 =======
 >>>>>>> parent of 3dd6565... registration complete
   }
