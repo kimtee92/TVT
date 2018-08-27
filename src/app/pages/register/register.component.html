@@ -4,27 +4,38 @@
       <div class="col-md-12">
         <div class="col-md-6 form-group">
           <label class="control-label">User Name</label>
-          <input type="text" formControlName="username" class="form-control" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <input type="text" formControlName="username" class="form-control" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+          />
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-              <div *ngIf="f.username.errors.required">Username is required</div>
+            <div *ngIf="f.username.errors.required">Username is required</div>
           </div>
         </div>
         <div class="col-md-6 form-group">
           <label class="control-label">Password</label>
-          <input type="password" formControlName="password" class="form-control" placeholder="password">
+          <input type="password" formControlName="password" class="form-control" placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+          />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-6 form-group">
           <label class="control-label">First Name</label>
-          <input type="text" formControlName="firstName" class="form-control" placeholder="John" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <input type="text" formControlName="firstName" class="form-control" placeholder="John" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+          />
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-              <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
           </div>
         </div>
         <div class="col-md-6 form-group">
           <label class="control-label">Last Name</label>
-          <input type="text" formControlName="lastName" class="form-control" placeholder="Smith">
+          <input type="text" formControlName="lastName" class="form-control" placeholder="Smith" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+          />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          </div>
         </div>
       </div>
       <div class="col-md-12">
@@ -33,13 +44,17 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
 =======
+=======
+>>>>>>> parent of 5737e83... Revert "registration complete"
           <select name="select" id="select1" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
             <option value="option1">Male</option>
             <option value="option2">Female</option>
             <option value="option3">Not Specified</option>
           </select>
+<<<<<<< HEAD
 >>>>>>> parent of b8dfb8d... Revert "Revert "dev""
 =======
           <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
@@ -47,53 +62,60 @@
 =======
           <input type="text" formControlName="gender" class="form-control" placeholder="Male" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" />
 >>>>>>> parent of 3dd6565... registration complete
+=======
+>>>>>>> parent of 5737e83... Revert "registration complete"
           <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-              <div *ngIf="f.gender.errors.required">Gender is required</div>
+            <div *ngIf="f.gender.errors.required">Gender is required</div>
           </div>
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Nationality</label>
-          <input type="text" formControlName="nationality" class="form-control" placeholder="Australian" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" />
+          <input type="text" formControlName="nationality" class="form-control" placeholder="Australian" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }"
+          />
           <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
-              <div *ngIf="f.nationality.errors.required">Nationality is required</div>
+            <div *ngIf="f.nationality.errors.required">Nationality is required</div>
           </div>
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Driver's License</label>
-          <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000" [ngClass]="{ 'is-invalid': submitted && f.licenseNo.errors }" />
+          <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000" [ngClass]="{ 'is-invalid': submitted && f.licenseNo.errors }"
+          />
           <div *ngIf="submitted && f.licenseNo.errors" class="invalid-feedback">
-              <div *ngIf="f.licenseNo.errors.required">License Number is required</div>
+            <div *ngIf="f.licenseNo.errors.required">License Number is required</div>
           </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-6 form-group">
           <label class="control-label">Contact Number</label>
-          <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456" [ngClass]="{ 'is-invalid': submitted && f.contactNo.errors }" />
+          <input type="text" formControlName="contactNo" class="form-control" placeholder="0412123456" [ngClass]="{ 'is-invalid': submitted && f.contactNo.errors }"
+          />
           <div *ngIf="submitted && f.contactNo.errors" class="invalid-feedback">
-              <div *ngIf="f.contactNo.errors.required">Contact Number is required</div>
+            <div *ngIf="f.contactNo.errors.required">Contact Number is required</div>
           </div>
         </div>
         <div class="col-md-6 form-group">
           <label class="control-label">Email</label>
-          <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <input type="text" formControlName="email" class="form-control" placeholder="email@adress.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+          />
           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.required">Email is required</div>
           </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-12 form-group">
           <label class="control-label">Address</label>
-          <textarea formControlName="address" class="form-control" placeholder="123 st. suburb city state" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+          <input formControlName="address" class="form-control" placeholder="123 st. suburb city state" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
           <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-              <div *ngIf="f.address.errors.required">Address is required</div>
+            <div *ngIf="f.address.errors.required">Address is required</div>
           </div>
         </div>
       </div>
       <div class="col-md-12 btn-wrap division form-group">
         <button type="submit" class="btn btn-primary btn-with-icon">
           <i class="fa fa-pencil fa-fw"></i>Register</button>
+          <a [routerLink]="['/login']" class="btn btn-primary ">Cancel</a>
       </div>
     </form>
   </card>
