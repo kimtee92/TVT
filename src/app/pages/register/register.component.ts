@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit {
              .subscribe(
                  data => {
                   swal({
+                    //show success alert if register successful
                     type: 'success',
                     title: 'Registration Success!',
                     text: '',
@@ -58,6 +59,7 @@ export class RegisterComponent implements OnInit {
                  },
                  error => {
                   swal({
+                    //show error alert if register is failed
                     type: 'error',
                     title: 'Registration Error',
                     text: 'Please refresh page and try again',
