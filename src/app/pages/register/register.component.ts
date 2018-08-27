@@ -49,20 +49,6 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-<<<<<<< HEAD
-    //      this.loading = true;
-    //      this.userService.register(this.registerForm.value)
-    //          .pipe(first())
-    //          .subscribe(
-    //              data => {
-    //                  this.alertService.success('Registration successful', true);
-    //                  this.router.navigate(['/login']);
-    //              },
-    //              error => {
-    //                  this.alertService.error(error);
-    //                  this.loading = false;
-    //              });
-=======
          this.driverService.register(this.registerForm.value)
              .pipe(first())
              .subscribe(
@@ -82,7 +68,6 @@ export class RegisterComponent implements OnInit {
                     text: 'Please refresh page and try again',
                   });
                  });
->>>>>>> dev
   }
 
 }
