@@ -7,11 +7,6 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: 'pages/profile',
-    canActivate: [AuthGuard]
   }
 ];
 
