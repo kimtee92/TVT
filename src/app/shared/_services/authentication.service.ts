@@ -11,8 +11,8 @@ export class AuthenticationService {
   }
 
     login(username: string, password: string) {
-        console.log(this.api + `/users/authenticate`, { username: username, password: password });
-        return this.http.post<any>(this.api + `/users/authenticate`, { username: username, password: password })
+        console.log(this.api + `/drivers/authenticate`, { username: username, password: password });
+        return this.http.post<any>(this.api + `/drivers/authenticate`, { username: username, password: password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {

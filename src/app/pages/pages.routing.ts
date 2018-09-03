@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from '../shared/_guards/auth.guard'
 
 export const childRoutes: Routes = [
     {
@@ -22,7 +23,8 @@ export const childRoutes: Routes = [
             { path: 'payment', loadChildren: './payment/profile.module#ProfileModule' },
             { path: 'scandriver2', loadChildren: './scandriver2/profile.module#ProfileModule' },
             { path: 'issueticket', loadChildren: './issueticket/profile.module#ProfileModule' },
-        ]
+        ],
+        canActivate: [AuthGuard]
     }
 ];
 
