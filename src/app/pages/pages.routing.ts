@@ -4,10 +4,21 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from '../shared/_guards/auth.guard'
 
+import { Login1Component } from './login.1/login.component';
+import { Login2Component } from './login.2/login.component';
+
 export const childRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
+    },
+    {
+        path: 'word',
+        component: Login1Component,
+    },
+    {
+        path: 'found',
+        component: Login2Component,
     },
     {
         path: 'register',
