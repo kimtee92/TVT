@@ -13,6 +13,7 @@ import { DriverService } from '../../shared/_services';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+  loading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,6 +41,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.loading = true;
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
@@ -59,6 +61,7 @@ export class RegisterComponent implements OnInit {
                   this.router.navigate(['/login']);
                  },
                  error => {
+                  this.loading = false;
                   swal({
                     type: 'error',
                     title: 'Registration Error',
