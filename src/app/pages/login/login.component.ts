@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
     this.authenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
+          this.loading = false;
           swal({
             type: 'error',
             title: 'Login Error',
