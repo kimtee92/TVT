@@ -15,8 +15,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthenticationService, DriverService } from '../shared/_services';
 
-import { Login1Component } from './login.1/login.component';
-import { Login2Component } from './login.2/login.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -29,9 +27,7 @@ import { Login2Component } from './login.2/login.component';
     declarations: [
         PagesComponent,
         LoginComponent,
-        RegisterComponent,
-        Login1Component,
-        Login2Component
+        RegisterComponent
     ],
     providers:[
         AuthenticationService,

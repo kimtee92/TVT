@@ -25,12 +25,6 @@ export class AuthenticationService {
             }));
     }
 
-    find(word) {
-        console.log(word);
-        sessionStorage.setItem('word', JSON.stringify(word));
-        return this.http.post(this.api + `/week7/find` , word )
-    }
-
     logout() {
         // remove user from local storage to log user out
         sessionStorage.removeItem('currentUser');
