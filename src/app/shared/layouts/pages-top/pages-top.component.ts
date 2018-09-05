@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GlobalService } from '../../services/global.service';
+import { Driver } from '../../_models/driver';
 
 @Component({
   selector: 'pages-top',
@@ -7,15 +8,15 @@ import { GlobalService } from '../../services/global.service';
   styleUrls: ['./pages-top.component.scss'],
 })
 export class PagesTopComponent {
+  currentUser: Driver;
   avatarImgSrc: string = 'assets/images/avatar.png';
-  userName: string = 'John Smith';
-  userPost: string = 'johnsmith';
-
 
   sidebarToggle: boolean = true;
   tip = { ring: true, email: true };
 
-  constructor(private _globalService: GlobalService) { }
+  constructor(private _globalService: GlobalService) { 
+                this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+              }
 
   public _sidebarToggle() {
     /* this._globalService.sidebarToggle$.subscribe(sidebarToggle => {

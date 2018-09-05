@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Nationality</label>
-          <select *ngIf="arrCountries" name="country" id="country" formControlName="nationality" class="form-control" placeholder="Australian" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
+          <select *ngIf="arrCountries" name="country" id="country" formControlName="nationality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
             <option *ngFor="let country of arrCountries" [value]=country.name>{{country.name}}</option>
           </select>
           <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-md-4 form-group">
           <label class="control-label">Driver's License</label>
-          <input type="text" formControlName="licenseNo" class="form-control" placeholder="100-000-000" [ngClass]="{ 'is-invalid': submitted && f.licenseNo.errors }"
+          <input type="text" formControlName="licenseNo" class="form-control" placeholder="000-000-000" [ngClass]="{ 'is-invalid': submitted && f.licenseNo.errors }"
           />
           <div *ngIf="submitted && f.licenseNo.errors" class="invalid-feedback">
             <div *ngIf="f.licenseNo.errors.required">License Number is required</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Driver } from '../../_models/driver';
 
 @Component({
   selector: 'profile',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
+  currentUser: Driver;
   userName: string = 'John Smith';
   userPost: string = 'johnsmith';
   
-  constructor() { }
+  constructor() { 
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
   }

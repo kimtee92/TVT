@@ -4,11 +4,11 @@
       <div class="avatar-wrap">
         <img src="{{avatarImgSrc}}" alt="avatar">
       </div>
-      <span class="user-name">{{userName}}</span>
-      <span class="user-post">{{userPost}}</span>
+      <span class="user-name">{{currentUser.firstName}} {{currentUser.lastName}}</span>
+      <span class="user-post">{{currentUser.username}}</span>
       <span class="map-location">
-        <i class="fa fa-map-marker"></i>
-        <span>Sydney</span>
+        <i class="fa fa-flag"></i>
+        <span> {{currentUser.nationality}}</span>
       </span>
     </div>
     <div class="profile-head">
