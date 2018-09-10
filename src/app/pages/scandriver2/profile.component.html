@@ -5,37 +5,40 @@
     <div class="col-md-8">
       <form class="pagination-wrapper" (ngSubmit)="onSubmit()" >
         <div class="row card card-block">
-          <div class="col-md-6 form-group">
+          <div class="col-md-4 form-group">
             <label class="control-label">First Name</label>
-            <input type="text" class="form-control" placeholder="John">
+            <input type="text" class="form-control" placeholder="{{currentUser.firstName}}" readonly>
           </div>
           <div class="col-md-6 form-group">
             <label class="control-label">Last Name</label>
-            <input type="text" class="form-control" placeholder="Smith">
+            <input type="text" class="form-control" placeholder="{{currentUser.lastName}}" readonly>
           </div>
           <div class="col-md-4 form-group">
             <label class="control-label">Gender</label>
-            <input type="text" class="form-control" placeholder="Male">
+            <input type="text" class="form-control" placeholder="{{currentUser.gender}}" readonly>
           </div>
           <div class="col-md-4 form-group">
             <label class="control-label">Nationality</label>
-            <input type="text" class="form-control" placeholder="Australian">
+            <input type="text" class="form-control" placeholder="{{currentUser.nationality}}" readonly>
           </div>
           <div class="col-md-4 form-group">
-            <label class="control-label">Drivers License</label>
-            <input type="text" class="form-control" placeholder="100-000-000">
+            <label class="control-label">Driver's License</label>
+            <input type="text" class="form-control" placeholder="{{currentUser.licenseNo}}" readonly>
           </div>
-          <div class="col-md-6 form-group">
+          <div class="col-md-4 form-group">
             <label class="control-label">Contact Number</label>
-            <input type="text" class="form-control" placeholder="0412123456">
+            <input type="text" class="form-control" placeholder="{{currentUser.contactNo}}" readonly>
           </div>
           <div class="col-md-6 form-group">
             <label class="control-label">Email</label>
-            <input type="text" class="form-control" placeholder="email@adress.com">
+            <input type="text" class="form-control" placeholder="{{currentUser.email}}" readonly>
           </div>
           <div class="col-md-12 form-group">
             <label class="control-label">Address</label>
-            <textarea class="form-control" placeholder="123 st. suburb city state"></textarea>
+            <textarea class="form-control" placeholder="{{currentUser.address}}" readonly></textarea>
+          </div>
+          <div class="col-md-12">
+            <!-- <button class="btn btn-primary">Update Profile</button> -->
           </div>
         </div>
         <div class="col-md-8">

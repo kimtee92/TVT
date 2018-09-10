@@ -1,0 +1,12 @@
+@import "../../shared/theme/color-schemes/_default.scss";
+
+input.form-control[readonly] {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: $border-color;
+    @include transition(all 1s);
+    &:focus {
+        border-bottom: 1px solid $primary;
+    }
+}

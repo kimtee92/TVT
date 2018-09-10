@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Driver } from '../../shared/_models/driver';
 
 @Component({
   selector: 'app-profile',
@@ -7,13 +8,20 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  avatarImgSrc: string = 'assets/images/avatar.png';
+  currentUser: Driver;
+
   tableData: Array<any>;
 
   pageSize = 10;
   pageNumber = 1;
 
   constructor(
-    private router: Router,) { }
+    private router: Router,) {
+      this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+     }
+
+  
 
   ngOnInit() {}
 
