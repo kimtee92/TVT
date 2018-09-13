@@ -21,7 +21,7 @@ export const childRoutes: Routes = [
             { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
             { path: 'violations', loadChildren: './violations/profile.module#ProfileModule' },
             { path: 'payment', loadChildren: './payment/profile.module#ProfileModule' },
-            { path: 'scandriver2', loadChildren: './scandriver2/profile.module#ProfileModule' },
+            { path: 'scandriver', loadChildren: './scandriver/scandriver.module#ScanDriverModule' },
             { path: 'issueticket', loadChildren: './issueticket/profile.module#ProfileModule' },
         ],
         canActivate: [AuthGuard]

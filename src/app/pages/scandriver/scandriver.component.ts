@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Driver } from '../../shared/_models/driver';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-scandriver',
+  templateUrl: './scandriver.component.html',
+  styleUrls: ['./scandriver.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ScanDriverComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
   currentUser: Driver;
 
