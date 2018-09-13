@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-pi-admin": {
+    "tvt": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-pi-admin:build"
+            "browserTarget": "tvt:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-pi-admin:build:production"
+              "browserTarget": "tvt:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-pi-admin:build"
+            "browserTarget": "tvt:build"
           }
         },
         "test": {
@@ -123,7 +123,7 @@
         }
       }
     },
-    "ng-pi-admin-e2e": {
+    "tvt-e2e": {
       "root": "",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -132,7 +132,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ng-pi-admin:serve"
+            "devServerTarget": "tvt:serve"
           }
         },
         "lint": {
@@ -149,7 +149,7 @@
       }
     }
   },
-  "defaultProject": "ng-pi-admin",
+  "defaultProject": "tvt",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
