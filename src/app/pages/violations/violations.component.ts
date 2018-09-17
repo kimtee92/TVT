@@ -3,12 +3,12 @@ import { TablesDataService } from './tablesData.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  selector: 'app-violations',
+  templateUrl: './violations.component.html',
+  styleUrls: ['./violations.component.scss'],
   providers: [TablesDataService]
 })
-export class ProfileComponent implements OnInit {
+export class ViolationsComponent implements OnInit {
   tableData: Array<any>;
 
   pageSize = 10;
