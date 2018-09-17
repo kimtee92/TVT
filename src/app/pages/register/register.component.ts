@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
       licenseNo: ['', [Validators.required, Validators.minLength(8)]],
-      contactNo: ['', Validators.required],
+      contactNo: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', Validators.required],
       address: ['', Validators.required]
     });
