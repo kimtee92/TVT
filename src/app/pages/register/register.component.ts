@@ -27,12 +27,12 @@ export class RegisterComponent implements OnInit {
     this.arrCountries = countries as string [];
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],      
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
-      licenseNo: ['', [Validators.required, Validators.minLength(8)]],
+      licenseNo: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
       contactNo: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', Validators.required],
       address: ['', Validators.required]
