@@ -14,14 +14,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
-            <td>{{item.date}}</td>
+            <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
             <td>{{item.violation}}</td>
-            <td>{{item.enforcer}}</td>
-            <td>{{item.fine}}</td>
+            <td>{{item.enforcerId}}</td>
+            <td>${{item.fine.$numberDecimal}}</td>
             <td>{{item.remarks}}</td>
             <td>
               <input class="checkbox" type="checkbox" attr.id="{{index}}">
-              <label class="check-label" for="id_{{index}}"></label>
+              <label class="check-label" for="id_{{item}}"></label>
             </td>
           </tr>
         </tbody>

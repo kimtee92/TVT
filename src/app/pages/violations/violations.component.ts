@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TablesDataService } from './tablesData.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Violation } from '../../shared/_models/violation';
+import { Driver } from '../../shared/_models/driver';
+import { first } from 'rxjs/operators';
+import { ViolationService } from '../../shared/_services/violation.service';
 
 @Component({
   selector: 'app-violations',
@@ -9,24 +13,33 @@ import { Router, ActivatedRoute } from '@angular/router';
   providers: [TablesDataService]
 })
 export class ViolationsComponent implements OnInit {
-  tableData: Array<any>;
-
+  tableData: Violation[];
+  currentUser: Driver;
+  licenseNo: string;
   pageSize = 10;
   pageNumber = 1;
 
   constructor(
     private _tablesDataService: TablesDataService,
-    private router: Router,) { }
+    private violationService: ViolationService,
+    private router: Router,
+  ) {
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    this.licenseNo = this.currentUser.licenseNo;
+  }
 
   ngOnInit() {
     this.loadData();
   }
 
   loadData() {
-    this.tableData = this._tablesDataService.DATA;
+    this.violationService.getByLicense(this.licenseNo).pipe(first()).subscribe((tableData: Violation[]) => {
+      this.tableData = tableData;
+      console.log(JSON.stringify(this.tableData));
+    });
   }
 
-  onSubmit() {    
+  onSubmit() {
     console.log("go to payment");
     this.router.navigate(["/pages/payment"]);
   }
