@@ -10,3 +10,6 @@ input.form-control[readonly] {
         border-bottom: 1px solid $primary;
     }
 }
+textarea.form-control {
+    background: $border-color!important;
+}

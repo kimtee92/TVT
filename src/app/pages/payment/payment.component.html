@@ -9,28 +9,23 @@
             <th>Enforcer</th>
             <th>Fine</th>
             <th>Remarks</th>
-            <th>Select</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
-            <td>{{item.date}}</td>
+            <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
             <td>{{item.violation}}</td>
-            <td>{{item.enforcer}}</td>
-            <td>{{item.fine}}</td>
+            <td>{{item.enforcerId}}</td>
+            <td>${{item.fine.$numberDecimal}}</td>
             <td>{{item.remarks}}</td>
-            <td>
-              <input class="checkbox" type="checkbox" attr.id="{{index}}">
-              <label class="check-label" for="{{index}}"></label>
-            </td>
           </tr>
         </tbody>
       </table>
       <form class="pagination-wrapper">
         <div class="form-group pages">
-          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
-            autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
-            screenReaderCurrentLabel="You're on page">
+          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
+            directionLinks="true" autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
           </pagination-controls>
         </div>
         <div class="form-group options pages">
@@ -68,29 +63,29 @@
           <input type="text" class="form-control" placeholder="###">
         </div>
         <div class="col-md-4 form-group">
-            <label class="control-label">Month Expiry</label>
-            <select name="select" id="select1" class="form-control">
-              <option value="jan">JAN</option>
-              <option value="feb">FEB</option>
-              <option value="mar">MAR</option>
-              <option value="apr">APR</option>
-              <option value="may">MAY</option>
-              <option value="jun">JUN</option>
-              <option value="jul">JUL</option>
-              <option value="aug">AUG</option>
-              <option value="sep">SEP</option>
-              <option value="oct">OCT</option>
-              <option value="nov">NOV</option>
-              <option value="dec">DEC</option>
-            </select>
+          <label class="control-label">Month Expiry</label>
+          <select name="select" id="select1" class="form-control">
+            <option value="jan">JAN</option>
+            <option value="feb">FEB</option>
+            <option value="mar">MAR</option>
+            <option value="apr">APR</option>
+            <option value="may">MAY</option>
+            <option value="jun">JUN</option>
+            <option value="jul">JUL</option>
+            <option value="aug">AUG</option>
+            <option value="sep">SEP</option>
+            <option value="oct">OCT</option>
+            <option value="nov">NOV</option>
+            <option value="dec">DEC</option>
+          </select>
         </div>
         <div class="col-md-4 form-group">
-            <label class="control-label">Year Expiry</label>
-            <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
-          </div>
+          <label class="control-label">Year Expiry</label>
+          <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
+        </div>
       </card>
       <div align="right">
-          <a class="btn btn-primary" href="/pages/payment">PAY</a>
+        <a class="btn btn-primary" href="/pages/payment">PAY</a>
       </div>
     </div>
   </div>

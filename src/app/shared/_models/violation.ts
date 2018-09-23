@@ -5,4 +5,5 @@ export class Violation {
     enforcerId: string;
     fine: any;
     remarks: string;
+    settled: boolean;
 }

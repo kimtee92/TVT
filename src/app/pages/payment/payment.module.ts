@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { routing } from './profile.routing';
+import { routing } from './payment.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { ProfileComponent } from "./profile.component";
+import { PaymentComponent } from "./payment.component";
 
 @NgModule({
     imports: [
@@ -17,8 +17,8 @@ import { ProfileComponent } from "./profile.component";
         routing
     ],
     declarations: [
-        ProfileComponent
+        PaymentComponent
     ]
 })
-export class ProfileModule { }
+export class PaymentModule { }
  

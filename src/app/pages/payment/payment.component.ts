@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { TablesDataService } from './tablesData.service';
+import { Violation } from '../../shared/_models/violation';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
-  providers: [TablesDataService]
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class PaymentComponent implements OnInit {
+  settle: Violation[] = JSON.parse(sessionStorage.getItem('pending')) || [];
   tableData: Array<any>;
 
   pageSize = 10;
   pageNumber = 1;
 
-  constructor(private _tablesDataService: TablesDataService) { }
+  constructor() { }
 
   ngOnInit() {
     this.loadData();
   }
 
   loadData() {
-    this.tableData = this._tablesDataService.DATA;
+    this.tableData = this.settle;
   }
 
   pageChanged(pN: number): void {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TablesDataService } from './tablesData.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Violation } from '../../shared/_models/violation';
 import { Driver } from '../../shared/_models/driver';
 import { first } from 'rxjs/operators';
@@ -18,9 +18,9 @@ export class ViolationsComponent implements OnInit {
   licenseNo: string;
   pageSize = 10;
   pageNumber = 1;
+  settle: Violation[] = JSON.parse(sessionStorage.getItem('pending')) || [];
 
   constructor(
-    private _tablesDataService: TablesDataService,
     private violationService: ViolationService,
     private router: Router,
   ) {
@@ -29,23 +29,35 @@ export class ViolationsComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('pending');
+    this.settle = [];  
     this.loadData();
   }
 
   loadData() {
     this.violationService.getByLicense(this.licenseNo).pipe(first()).subscribe((tableData: Violation[]) => {
-      this.tableData = tableData;
-      console.log(JSON.stringify(this.tableData));
+      this.tableData = tableData;;
     });
   }
 
   onSubmit() {
-    console.log("go to payment");
     this.router.navigate(["/pages/payment"]);
   }
 
   pageChanged(pN: number): void {
     this.pageNumber = pN;
+  }
+
+  checkValue(event: any, pending: Violation) {
+    var index = this.settle.findIndex(function (item, i) {
+      return item.id === pending.id
+    });
+    if (event.target.checked) {
+      this.settle.push(pending);
+    } else {
+      this.settle.splice(index, 1);
+    }
+    sessionStorage.setItem('pending', JSON.stringify(this.settle));
   }
 
 }

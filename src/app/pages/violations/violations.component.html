@@ -1,39 +1,41 @@
 <div class="row">
   <div class="col-md-12">
     <card cardTitle="Violation Table">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Violation</th>
-            <th>Enforcer</th>
-            <th>Fine</th>
-            <th>Remarks</th>
-            <th>Select</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
-            <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
-            <td>{{item.violation}}</td>
-            <td>{{item.enforcerId}}</td>
-            <td>${{item.fine.$numberDecimal}}</td>
-            <td>{{item.remarks}}</td>
-            <td>
-              <input class="checkbox" type="checkbox" attr.id="{{index}}">
-              <label class="check-label" for="id_{{item}}"></label>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <form class="pagination-wrapper" (ngSubmit)="onSubmit()" >
+      <form (ngSubmit)="onSubmit()">
+        <table class="form-group table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Violation</th>
+              <th>Enforcer</th>
+              <th>Fine</th>
+              <th>Remarks</th>
+              <th>Settled</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let i = index">
+              <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
+              <td>{{item.violation}}</td>
+              <td>{{item.enforcerId}}</td>
+              <td>${{item.fine.$numberDecimal}}</td>
+              <td>{{item.remarks}}</td>
+              <td>{{item.settled}}</td>
+              <td>
+                <input class="checkbox" [ngClass]=item.id (change)="checkValue($event, item)" type="checkbox" [id]=item.id>
+                <label class="check-label" [for]=item.id></label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <div class="form-group pages">
-          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
-            autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
-            screenReaderCurrentLabel="You're on page">
+          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
+            directionLinks="true" autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
           </pagination-controls>
         </div>
-        <div class="form-group options pages">
+        <div class="pagination-wrapper form-group options pages">
           <div class="input-group input-group-sm">
             <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize" (ngModelChange)="loadData()">
               <option>1</option>
