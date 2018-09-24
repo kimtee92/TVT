@@ -64,4 +64,4 @@ typings/
 .next
 
 #Dist
-dist/
+##dist/

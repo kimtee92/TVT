@@ -1,0 +1,56 @@
+[
+  {
+    "violation": "Drive with Novice Range PCA 0.00 to < 0.02"
+  },
+  {
+    "violation": "Drive with Special Range PCA 0.02 to < 0.05"
+  },
+  {
+    "violation": "Drive with Low Range PCA 0.05 to < 0.08"
+  },
+  {
+    "violation": "Drive with Mid Range PCA 0.08 to < 0.15"
+  },
+  {
+    "violation": "Drive with High Range PCA 0.15 and above"
+  },
+  {
+    "violation": "Driving under the Influence*"
+  },
+  {
+    "violation": "Driving Negligent"
+  },
+  {
+    "violation": "Negligent Driving Causing Grievous Bodily Harm (GBH)"
+  },
+  {
+    "violation": "Negligent Driving Causing Death"
+  },
+  {
+    "violation": "Drive in Speed or Manner Dangerous or Reckless or Furious"
+  },
+  {
+    "violation": "Street Racing"
+  },
+  {
+    "violation": "Drive while cancelled, suspended or disqualified"
+  },
+  {
+    "violation": "Drive while unlicensed"
+  },
+  {
+    "violation": "Drive while unlicensed %u2013 without holding a license for 5 years"
+  },
+  {
+    "violation": "Refuse to provide a Breath Test"
+  },
+  {
+    "violation": "Refuse to provide a Breath, Blood or Urine Analysis"
+  },
+  {
+    "violation": "Refuse to submit a Blood or Urine Sample"
+  },
+  {
+    "violation": "Failure to stop and render assistance"
+  }
+]
