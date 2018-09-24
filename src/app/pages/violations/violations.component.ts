@@ -5,6 +5,7 @@ import { Violation } from '../../shared/_models/violation';
 import { Driver } from '../../shared/_models/driver';
 import { first } from 'rxjs/operators';
 import { ViolationService } from '../../shared/_services/violation.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-violations',
@@ -19,8 +20,8 @@ export class ViolationsComponent implements OnInit {
   pageSize = 10;
   pageNumber = 1;
   settle: Violation[] = [];
-  total: number=0;
-  number: number=0;
+  total: number = 0;
+  number: number = 0;
 
   constructor(
     private violationService: ViolationService,
@@ -33,13 +34,18 @@ export class ViolationsComponent implements OnInit {
   ngOnInit() {
     sessionStorage.removeItem('pending');
     console.log('loading');
+    swal({
+      title: 'Please wait',
+      text: 'Loading data',
+    });
+    swal.showLoading();
     this.loadData();
   }
 
   loadData() {
     this.violationService.getByLicense(this.licenseNo).pipe(first()).subscribe((tableData: Violation[]) => {
       this.tableData = tableData;
-      console.log('loading done');
+      swal.close();
     });
   }
 
