@@ -21,6 +21,13 @@
           </tr>
         </tbody>
       </table>
+      <table class="form-group table table-bordered table-hover">
+        <tr>
+          <th>Total: </th>
+          <th>Quantity: {{number}}</th>
+          <th>Amount: ${{total.toFixed(2)}}</th>
+        </tr>
+      </table>
       <form class="pagination-wrapper">
         <div class="form-group pages">
           <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
@@ -85,7 +92,7 @@
         </div>
       </card>
       <div align="right">
-        <a class="btn btn-primary" href="/pages/payment">PAY</a>
+        <a class="btn btn-primary" (click)="onClickPay()">PAY</a>
       </div>
     </div>
   </div>

@@ -29,6 +29,13 @@
             </tr>
           </tbody>
         </table>
+        <table class="form-group table table-bordered table-hover">
+          <tr>
+            <th>Total: </th>
+            <th>Quantity: {{number}}</th>
+            <th>Amount: ${{total.toFixed(2)}}</th>
+          </tr>
+        </table>
         <div class="form-group pages">
           <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
             directionLinks="true" autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination"

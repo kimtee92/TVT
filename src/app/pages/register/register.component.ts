@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   loading = false;
-  arrCountries: string [];
+  arrCountries: string[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,12 +24,12 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.arrCountries = countries as string [];
+    this.arrCountries = countries as string[];
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
       firstName: ['', Validators.required],
-      lastName: ['', Validators.required],      
+      lastName: ['', Validators.required],
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
       licenseNo: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
@@ -53,25 +53,25 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-         this.driverService.register(this.registerForm.value)
-             .pipe(first())
-             .subscribe(
-                 data => {
-                  swal({
-                    type: 'success',
-                    title: 'Registration Success!',
-                    text: '',
-                  });
-                  this.router.navigate(['/login']);
-                 },
-                 error => {
-                  this.loading = false;
-                  swal({
-                    type: 'error',
-                    title: 'Registration Error',
-                    text: error,
-                  });
-                 });
+    this.driverService.register(this.registerForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          swal({
+            type: 'success',
+            title: 'Registration Success!',
+            text: '',
+          });
+          this.router.navigate(['/login']);
+        },
+        error => {
+          this.loading = false;
+          swal({
+            type: 'error',
+            title: 'Registration Error',
+            text: error,
+          });
+        });
   }
 
 }

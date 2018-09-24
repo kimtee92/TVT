@@ -18,7 +18,9 @@ export class ViolationsComponent implements OnInit {
   licenseNo: string;
   pageSize = 10;
   pageNumber = 1;
-  settle: Violation[] = JSON.parse(sessionStorage.getItem('pending')) || [];
+  settle: Violation[] = [];
+  total: number=0;
+  number: number=0;
 
   constructor(
     private violationService: ViolationService,
@@ -30,7 +32,6 @@ export class ViolationsComponent implements OnInit {
 
   ngOnInit() {
     sessionStorage.removeItem('pending');
-    this.settle = [];  
     this.loadData();
   }
 
@@ -54,43 +55,12 @@ export class ViolationsComponent implements OnInit {
     });
     if (event.target.checked) {
       this.settle.push(pending);
+      this.total = this.total + Number(pending.fine.$numberDecimal);
     } else {
       this.settle.splice(index, 1);
+      this.total = this.total - Number(pending.fine.$numberDecimal);
     }
+    this.number = this.settle.length;
     sessionStorage.setItem('pending', JSON.stringify(this.settle));
   }
-
 }
-/*
-import { Component, OnInit } from '@angular/core';
-import { TablesDataService } from './tablesData.service';
-
-@Component({
-  selector: 'app-data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss'],
-  providers: [TablesDataService]
-})
-export class DataTableComponent implements OnInit {
-  tableData: Array<any>;
-
-  pageSize = 10;
-  pageNumber = 1;
-
-  constructor(private _tablesDataService: TablesDataService) { }
-
-  ngOnInit() {
-    this.loadData();
-  }
-
-  loadData() {
-    this.tableData = this._tablesDataService.DATA;
-  }
-
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
-  }
-
-}
-
-*/

@@ -33,7 +33,8 @@ export class ViolationService {
     //     return this.http.put(this.api + `/violations/` + driver.id, driver);
     // }
 
-    // delete(id: number) {
-    //     return this.http.delete(this.api + `/violations/` + id);
-    // }
+    delete(id: number[]=[]) {
+        console.log(id);
+        return this.http.delete(this.api + `/violations/deletebyid/` + id);
+    }
 }
