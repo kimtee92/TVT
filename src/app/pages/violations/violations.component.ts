@@ -32,12 +32,14 @@ export class ViolationsComponent implements OnInit {
 
   ngOnInit() {
     sessionStorage.removeItem('pending');
+    console.log('loading');
     this.loadData();
   }
 
   loadData() {
     this.violationService.getByLicense(this.licenseNo).pipe(first()).subscribe((tableData: Violation[]) => {
-      this.tableData = tableData;;
+      this.tableData = tableData;
+      console.log('loading done');
     });
   }
 

@@ -1,6 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-import { PagesComponent } from './pages/pages.component';
-import { AuthGuard } from './shared/_guards/auth.guard'
 
 const appRoutes: Routes = [
   {
