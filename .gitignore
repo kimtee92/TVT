@@ -40,7 +40,7 @@ jspm_packages/
 typings/
 
 #VSCode
-.vscode/
+.vscode
 
 # Optional npm cache directory
 .npm
