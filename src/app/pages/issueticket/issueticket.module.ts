@@ -20,5 +20,5 @@ import { IssueticketComponent } from './issueticket.component';
         IssueticketComponent
     ]
 })
-export class IssueticketeModule { }
+export class IssueticketModule { }
  
