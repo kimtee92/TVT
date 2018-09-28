@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { TablesDataService } from './tablesData.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  selector: 'app-issueticket',
+  templateUrl: './issueticket.component.html',
+  styleUrls: ['./issueticket.component.scss'],
   providers: [TablesDataService]
 })
-export class ProfileComponent implements OnInit {
+export class IssueticketComponent implements OnInit {
   tableData: Array<any>;
 
   pageSize = 10;
