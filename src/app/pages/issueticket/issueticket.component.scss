@@ -1,5 +1,24 @@
 @import "../../shared/theme/conf";
 
+input.form-control {
+    border-radius: 0;
+    border: 1px;
+    border-bottom: 1px solid transparent;
+    background: white;
+    @include transition(all 1s);
+    &:focus {
+        border-bottom: 1px solid $primary;
+    }
+}
+
+td{
+    padding: 3px;
+}
+
+textarea.form-control {
+    background: $border-color!important;
+}
+
 .pagination-wrapper {
     display: flex;
     flex-direction: row;

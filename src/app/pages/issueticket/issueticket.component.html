@@ -1,97 +1,91 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="col-md-6">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Violation</th>
-            <th>Enforcer</th>
-            <th>Fine</th>
-            <th>Remarks</th>
-            <th>Select</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
-            <td>{{item.date}}</td>
-            <td>{{item.violation}}</td>
-            <td>{{item.enforcer}}</td>
-            <td>{{item.fine}}</td>
-            <td>{{item.remarks}}</td>
-            <td>
-              <input class="checkbox" type="checkbox" attr.id="{{index}}">
-              <label class="check-label" for="{{index}}"></label>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <form class="pagination-wrapper">
-        <div class="form-group pages">
-          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
-            autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
-            screenReaderCurrentLabel="You're on page">
-          </pagination-controls>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <table class="table table-bordered table-hover" id="inputViolation">
+            <thead>
+              <tr>
+                <th>Violation</th>
+                <th>Fine</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+                <td><input type="text" class="form-control" placeholder="Violation"></td>
+                <td><input type="text" class="form-control" placeholder="$ 100.00"></td>
+                <td><input type="text" class="form-control" placeholder="Remarks"></td>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td style="text-align: left;" colspan="3">
+                        <button class="btn btn-lg btn-success btn-with-icon" id="addrow">
+                            <i class="fa fa-check fa-fw"></i>Add row</button>
+                        <button type="submit" class="btn btn-lg btn-warning btn-with-icon">
+                            <i class="fa fa-exclamation-triangle fa-fw"></i>Delete last</button>
+                    </td>
+                </tr>
+            </tfoot>
+          </table>
+        </form>
+    
+      <button class="form-control" style="width: 200px" data-toggle="modal" data-target="#myModal">View Recent History</button>
+      
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Recent History</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Violation</th>
+                      <th>Driver</th>
+                      <th>Fine</th>
+                      <th>Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
+                      <td>{{item.date}}</td>
+                      <td>{{item.violation}}</td>
+                      <td>{{item.driver}}</td>
+                      <td>{{item.fine}}</td>
+                      <td>{{item.remarks}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <form class="pagination-wrapper">
+                  <div class="form-group pages">
+                    <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
+                      autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+                    </pagination-controls>
+                  </div>
+                  <div class="form-group options pages">
+                    <div class="input-group input-group-sm">
+                      <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize" (ngModelChange)="loadData()">
+                        <option>1</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>200</option>
+                      </select>
+                      <span class="input-group-addon addon-right">Per Page</span>
+                    </div>
+                  </div>
+                </form>
+          
         </div>
-        <div class="form-group options pages">
-          <div class="input-group input-group-sm">
-            <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize" (ngModelChange)="loadData()">
-              <option>1</option>
-              <option>5</option>
-              <option>10</option>
-              <option>20</option>
-              <option>50</option>
-              <option>100</option>
-              <option>200</option>
-            </select>
-            <span class="input-group-addon addon-right">Per Page</span>
-          </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal">
         </div>
-      </form>
+      </div>  
     </div>
-    <div class="col-md-6">
-      <card cardTitle="Payment Details">
-        <div class="col-md-12 form-group">
-          <label class="control-label">Name on Card</label>
-          <input type="text" class="form-control" placeholder="John Smith">
-        </div>
-        <div class="col-md-12 form-group">
-          <label class="control-label">Card Number</label>
-          <input type="text" class="form-control" placeholder="111-222-333">
-        </div>
-        <div class="col-md-12 form-group">
-          <label class="control-label">Billing Address</label>
-          <input type="text" class="form-control" placeholder="Street, Suburb, State, Postcode">
-        </div>
-        <div class="col-md-4 form-group">
-          <label class="control-label">CVC</label>
-          <input type="text" class="form-control" placeholder="###">
-        </div>
-        <div class="col-md-4 form-group">
-            <label class="control-label">Month Expiry</label>
-            <select name="select" id="select1" class="form-control">
-              <option value="jan">JAN</option>
-              <option value="feb">FEB</option>
-              <option value="mar">MAR</option>
-              <option value="apr">APR</option>
-              <option value="may">MAY</option>
-              <option value="jun">JUN</option>
-              <option value="jul">JUL</option>
-              <option value="aug">AUG</option>
-              <option value="sep">SEP</option>
-              <option value="oct">OCT</option>
-              <option value="nov">NOV</option>
-              <option value="dec">DEC</option>
-            </select>
-        </div>
-        <div class="col-md-4 form-group">
-            <label class="control-label">Year Expiry</label>
-            <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
-          </div>
-      </card>
-      <div align="right">
-          <a class="btn btn-primary" href="/pages/payment">PAY</a>
-      </div>
-    </div>
+</div>
   </div>
 </div>
