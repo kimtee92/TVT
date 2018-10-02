@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
           <table class="table table-bordered table-hover" id="inputViolation">
             <thead>
               <tr>
@@ -10,24 +10,29 @@
               </tr>
             </thead>
             <tbody>
-                <td><input type="text" class="form-control" placeholder="Violation"></td>
-                <td><input type="text" class="form-control" placeholder="$ 100.00"></td>
-                <td><input type="text" class="form-control" placeholder="Remarks"></td>
+                <td><input type="text" formcontrolname="violation" class="form-control" placeholder="Violation"></td>
+                <td><input type="text" formcontrolname="fine" class="form-control" placeholder="$ 100.00"></td>
+                <td><input type="text" formcontrolname="remarks" class="form-control" placeholder="Remarks"></td>
             </tbody>
             <tfoot>
                 <tr>
-                    <td style="text-align: left;" colspan="3">
-                        <button class="btn btn-lg btn-success btn-with-icon" id="addrow">
-                            <i class="fa fa-check fa-fw"></i>Add row</button>
-                        <button type="submit" class="btn btn-lg btn-warning btn-with-icon">
-                            <i class="fa fa-exclamation-triangle fa-fw"></i>Delete last</button>
+                    <td style="text-align: left; border-right: 0px" colspan="2">
+                        <button class="btn btn-lg btn-warning btn-with-icon" id="addrow">
+                            <i class="fa fa-plus fa-fw"></i>Add row</button>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="btn btn-lg btn-default btn-with-icon">
+                            <i class="fa fa-remove fa-fw"></i>Delete last</button>
+                    </td>
+                    <td style="text-align: right;border-left: 0px">
+                        <button type="submit" class="btn btn-lg btn-success btn-with-icon">
+                            <i class="fa fa-upload fa-fw"></i>Submit</button>
                     </td>
                 </tr>
             </tfoot>
           </table>
         </form>
     
-      <button class="form-control" style="width: 200px" data-toggle="modal" data-target="#myModal">View Recent History</button>
+      <button class="btn btn-lg btn-primary btn-with-icon" style="width: 200px" data-toggle="modal" data-target="#myModal">View Recent History</button>
       
       <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -80,10 +85,7 @@
                   </div>
                 </form>
           
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-default" data-dismiss="modal">
-        </div>
+              </div>
       </div>  
     </div>
 </div>
