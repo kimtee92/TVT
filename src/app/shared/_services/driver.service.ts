@@ -21,6 +21,10 @@ export class DriverService {
         return this.http.get(this.api + `/drivers/` + id);
     }
 
+    getByLicense(num: string) {
+        return this.http.get(this.api + `/drivers/driver/` + num);
+    }
+
     register(driver: Driver) {
         return this.http.post(this.api + `/drivers/register`, driver);
     }
@@ -32,4 +36,5 @@ export class DriverService {
     delete(id: number) {
         return this.http.delete(this.api + `/drivers/` + id);
     }
+    
 }

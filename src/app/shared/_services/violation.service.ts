@@ -25,6 +25,11 @@ export class ViolationService {
         return this.http.get<Violation[]>(this.api + `/violations/view/` + license);
     }
 
+    getByLicenseAll(license: string) {
+        console.log(license);
+        return this.http.get<Violation[]>(this.api + `/violations/history/` + license);
+    }
+
     // register(driver: Violation) {
     //     return this.http.post(this.api + `/violations/register`, driver);
     // }
@@ -33,8 +38,8 @@ export class ViolationService {
     //     return this.http.put(this.api + `/violations/` + driver.id, driver);
     // }
 
-    delete(id: number[]=[]) {
+    pay(id: number[]=[]) {
         console.log(id);
-        return this.http.delete(this.api + `/violations/deletebyid/` + id);
+        return this.http.delete(this.api + `/violations/paybyid/` + id);
     }
 }

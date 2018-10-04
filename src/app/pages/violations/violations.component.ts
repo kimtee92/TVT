@@ -6,6 +6,7 @@ import { Driver } from '../../shared/_models/driver';
 import { first } from 'rxjs/operators';
 import { ViolationService } from '../../shared/_services/violation.service';
 import swal from 'sweetalert2';
+import { Globals } from '../../shared/globals';
 
 @Component({
   selector: 'app-violations',
@@ -26,14 +27,13 @@ export class ViolationsComponent implements OnInit {
   constructor(
     private violationService: ViolationService,
     private router: Router,
+    private globals: Globals
   ) {
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     this.licenseNo = this.currentUser.licenseNo;
   }
 
   ngOnInit() {
-    sessionStorage.removeItem('pending');
-    console.log('loading');
     swal({
       title: 'Please wait',
       text: 'Loading data',
@@ -69,6 +69,7 @@ export class ViolationsComponent implements OnInit {
       this.total = this.total - Number(pending.fine.$numberDecimal);
     }
     this.number = this.settle.length;
-    sessionStorage.setItem('pending', JSON.stringify(this.settle));
+    this.globals.pending = this.settle;
   }
+  
 }

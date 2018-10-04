@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { Violation } from '../../shared/_models/violation';
 import { ViolationService } from '../../shared/_services/violation.service';
+import { Globals } from '../../shared/globals';
 
 @Component({
   selector: 'app-payment',
@@ -11,7 +12,7 @@ import { ViolationService } from '../../shared/_services/violation.service';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-  settle: Violation[] = JSON.parse(sessionStorage.getItem('pending')) || [];
+  settle: Violation[] = [];
   tableData: Array<any>;
   id: any[] = [];  
   total: number=0;
@@ -20,9 +21,11 @@ export class PaymentComponent implements OnInit {
   pageNumber = 1;
 
   constructor(private violationService: ViolationService,
-    private router: Router) { }
+              private router: Router,
+              private globals: Globals) { }
 
   ngOnInit() {
+    this.settle = this.globals.pending;
     this.loadData();
     for (let item of this.settle) {
       console.log('ID: ' + item.id + ' ' +item.fine.$numberDecimal);
@@ -42,7 +45,7 @@ export class PaymentComponent implements OnInit {
 
   onClickPay() {
     console.log('Pay button');
-    this.violationService.delete(this.id)
+    this.violationService.pay(this.id)
       .pipe(first())
       .subscribe(
         data => {

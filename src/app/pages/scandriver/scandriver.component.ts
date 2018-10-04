@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Driver } from '../../shared/_models/driver';
+import { DriverService } from '../../shared/_services';
+import { Globals } from '../../shared/globals';
 
 @Component({
   selector: 'app-scandriver',
@@ -9,58 +13,39 @@ import { Driver } from '../../shared/_models/driver';
 })
 export class ScanDriverComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
-  currentUser: Driver;
-
-  tableData: Array<any>;
-
+  currentDriver: Driver;
+  driverForm: FormGroup;
   pageSize = 10;
   pageNumber = 1;
+
+  @HostListener('window:beforeunload') onBeforeUnload() {
+    console.log('leaving');
+  }
 
   constructor(
-    private router: Router,) {
-      this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-     }
-
-  
-
-  ngOnInit() {}
-
-  onSubmit() {    
-    console.log("go to payment");
-    this.router.navigate(["/pages/issueticket"]);
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private driverService: DriverService,
+    private globals: Globals) {
+    this.currentDriver = JSON.parse(sessionStorage.getItem('currentUser'));
   }
-
-}
-/*
-import { Component, OnInit } from '@angular/core';
-import { TablesDataService } from './tablesData.service';
-
-@Component({
-  selector: 'app-data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss'],
-  providers: [TablesDataService]
-})
-export class DataTableComponent implements OnInit {
-  tableData: Array<any>;
-
-  pageSize = 10;
-  pageNumber = 1;
-
-  constructor(private _tablesDataService: TablesDataService) { }
 
   ngOnInit() {
-    this.loadData();
+    this.driverForm = this.formBuilder.group({
+      driver: ['']
+    });
   }
 
-  loadData() {
-    this.tableData = this._tablesDataService.DATA;
-  }
+  // convenience getter for easy access to form fields
+  get f() { return this.driverForm.controls; }
 
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
+  onSubmit() {
+    this.globals.driver = this.driverForm.value.driver;
+    this.driverService.getByLicense(this.globals.driver).pipe(first()).subscribe((tableData: Driver) => {
+      this.currentDriver = tableData;
+    });
+    this.globals.profile = this.currentDriver;
+    //this.router.navigate(["/pages/issueticket"]);
   }
 
 }
-
-*/

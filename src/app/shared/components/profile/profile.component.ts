@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Driver } from '../../_models/driver';
+import { Globals } from '../../globals';
 
 @Component({
   selector: 'profile',
@@ -9,14 +10,12 @@ import { Driver } from '../../_models/driver';
 export class ProfileComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
   currentUser: Driver;
-  userName: string = 'John Smith';
-  userPost: string = 'johnsmith';
   
-  constructor() { 
-    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+  constructor(private globals: Globals) { 
+    this.currentUser = this.globals.profile || JSON.parse(sessionStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
   }
-
+  
 }
