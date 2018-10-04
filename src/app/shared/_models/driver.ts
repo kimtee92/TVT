@@ -1,7 +1,7 @@
 export class Driver {
     id: number;
-    username: String;
-    password: String;
+    username: string;
+    password: string;
     firstName: string;
     lastName: string;
     gender: string;

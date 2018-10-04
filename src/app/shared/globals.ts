@@ -7,5 +7,4 @@ export class Globals {
   api: string = environment.api;
   driver: string = '';
   pending: Violation[] = [];
-  profile: any;
 }

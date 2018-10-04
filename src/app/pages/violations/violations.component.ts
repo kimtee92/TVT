@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TablesDataService } from './tablesData.service';
 import { Router } from '@angular/router';
 import { Violation } from '../../shared/_models/violation';
 import { Driver } from '../../shared/_models/driver';
@@ -11,8 +10,7 @@ import { Globals } from '../../shared/globals';
 @Component({
   selector: 'app-violations',
   templateUrl: './violations.component.html',
-  styleUrls: ['./violations.component.scss'],
-  providers: [TablesDataService]
+  styleUrls: ['./violations.component.scss']
 })
 export class ViolationsComponent implements OnInit {
   tableData: Violation[];

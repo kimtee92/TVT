@@ -1,21 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Driver } from '../../_models/driver';
-import { Globals } from '../../globals';
+import { MyService } from '../../../shared/_services/myservice'
+import { TablesDataService } from './tablesData.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
+  providers: [TablesDataService]
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnDestroy {
   avatarImgSrc: string = 'assets/images/avatar.png';
-  currentUser: Driver;
-  
-  constructor(private globals: Globals) { 
-    this.currentUser = this.globals.profile || JSON.parse(sessionStorage.getItem('currentUser'));
+  currentUser: Driver = this.tabledataservice.DATA;
+  subscription: Subscription;
+
+  constructor(private myService: MyService,
+    private tabledataservice: TablesDataService, ) {
+    this.subscription = this.myService.myMethod$.subscribe((data: Driver) => {
+      this.currentUser = data;
+    });
   }
 
-  ngOnInit() {
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
-  
+
 }

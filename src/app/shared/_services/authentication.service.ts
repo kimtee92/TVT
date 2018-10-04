@@ -19,7 +19,6 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     //console.log(JSON.stringify(user));
                     sessionStorage.setItem('currentUser', JSON.stringify(user));
-                    this.globals.profile = user;
                 }
 
                 return user;
