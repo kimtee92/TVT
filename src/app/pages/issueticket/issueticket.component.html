@@ -48,7 +48,7 @@
                 <tr>
                   <th>Date</th>
                   <th>Violation</th>
-                  <th>Driver</th>
+                  <th>Settled</th>
                   <th>Fine</th>
                   <th>Remarks</th>
                 </tr>
@@ -57,7 +57,7 @@
                 <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
                   <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
                   <td>{{item.violation}}</td>
-                  <td>{{item.firstName}} {{item.firstName}}</td>
+                  <td>{{item.settled}}</td>
                   <td>${{item.fine.$numberDecimal}}</td>
                   <td>{{item.remarks}}</td>
                 </tr>

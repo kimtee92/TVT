@@ -52,27 +52,46 @@
       </form>
     </div>
     <div class="col-md-6">
-      <card cardTitle="Payment Details">
-        <form formGroup="paymentForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <card cardTitle="Payment Details">
           <div class="col-md-12 form-group">
             <label class="control-label">Name on Card</label>
-            <input type="text" class="form-control" placeholder="John Smith">
+            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+            />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
           </div>
           <div class="col-md-12 form-group">
             <label class="control-label">Card Number</label>
-            <input type="text" class="form-control" placeholder="111-222-333">
+            <input type="text" formControlName="cardNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardNo.errors }"
+            />
+            <div *ngIf="submitted && f.cardNo.errors" class="invalid-feedback">
+              <div *ngIf="f.cardNo.errors.required">Card Number is required</div>
+              <div *ngIf="f.cardNo.errors.minlength">Card Number must be at least 16 characters</div>
+              <div *ngIf="f.cardNo.errors.maxlength">Card Number must not exceed 16 characters</div>
+              <div *ngIf="f.cardNo.errors.pattern">Card Number must be numeric only</div>
+            </div>
           </div>
           <div class="col-md-12 form-group">
             <label class="control-label">Billing Address</label>
-            <input type="text" class="form-control" placeholder="Street, Suburb, State, Postcode">
+            <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required">Address is required</div>
+            </div>
           </div>
           <div class="col-md-4 form-group">
             <label class="control-label">CVC</label>
-            <input type="text" class="form-control" placeholder="###">
+            <input type="text" formControlName="cvc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvc.errors }">
+            <div *ngIf="submitted && f.cvc.errors" class="invalid-feedback">
+              <div *ngIf="f.cvc.errors.required">CVC is required</div>
+              <div *ngIf="f.cvc.errors.minlength">CVC must be at least 3 numberss</div>
+              <div *ngIf="f.cvc.errors.pattern">CVC must be numeric only</div>
+            </div>
           </div>
           <div class="col-md-4 form-group">
             <label class="control-label">Month Expiry</label>
-            <select name="select" id="select1" class="form-control">
+            <select name="select" formControlName="month" id="select1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.month.errors }">
               <option value=""></option>
               <option value="jan">JAN</option>
               <option value="feb">FEB</option>
@@ -87,16 +106,36 @@
               <option value="nov">NOV</option>
               <option value="dec">DEC</option>
             </select>
+            <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
+              <div *ngIf="f.month.errors.required">Month is required</div>
+            </div>
           </div>
           <div class="col-md-4 form-group">
             <label class="control-label">Year Expiry</label>
-            <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
+            <select name="year-select" formControlName="year" id="select2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }">
+              <option value=""></option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+            </select>
+            <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+              <div *ngIf="f.year.errors.required">Year is required</div>
+            </div>
           </div>
-        </form>
-      </card>
-      <div align="right">
-        <a class="btn btn-primary" (click)="onClickPay()">PAY</a>
-      </div>
+        </card>
+        <div align="right">
+          <button type="submit" class="btn btn-primary btn-with-icon">
+            <i class="fa fa-pencil fa-fw"></i>PAY</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

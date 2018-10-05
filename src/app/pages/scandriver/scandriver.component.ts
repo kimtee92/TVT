@@ -43,6 +43,10 @@ export class ScanDriverComponent implements OnInit{
   // convenience getter for easy access to form fields
   get f() { return this.driverForm.controls; }
 
+  onClickIssue() {
+    this.router.navigate(["/pages/issueticket"]);
+  }
+
   onSubmit() {
     this.submitted = true;
     if(this.driverForm.invalid){
@@ -61,11 +65,7 @@ export class ScanDriverComponent implements OnInit{
         type: 'error',
         title: 'No Data Found',
       });
-    },
-    // data => { 
-    //   this.router.navigate(["/pages/issueticket"]);  
-    // }    
-    );
+    });
   }
 
 }
