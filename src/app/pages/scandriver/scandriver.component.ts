@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Driver } from '../../shared/_models/driver';
@@ -19,6 +19,7 @@ export class ScanDriverComponent implements OnInit{
   avatarImgSrc: string = 'assets/images/avatar.png';
   currentDriver: Driver;
   driverForm: FormGroup;
+  submitted = false;
   pageSize = 10;
   pageNumber = 1;
 
@@ -35,7 +36,7 @@ export class ScanDriverComponent implements OnInit{
 
   ngOnInit() {
     this.driverForm = this.formBuilder.group({
-      driver: ['']
+      driver: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern("^[0-9]*$")]]
     });
   }
 
@@ -43,6 +44,12 @@ export class ScanDriverComponent implements OnInit{
   get f() { return this.driverForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if(this.driverForm.invalid){
+      console.log("invalid form");
+      return;
+    }
+
     this.globals.driver = this.driverForm.value.driver;
     this.driverService.getByLicense(this.globals.driver).pipe(first()).subscribe(
       (tableData: Driver) => {

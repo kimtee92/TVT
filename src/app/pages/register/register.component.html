@@ -66,6 +66,8 @@
           <div *ngIf="submitted && f.licenseNo.errors" class="invalid-feedback">
             <div *ngIf="f.licenseNo.errors.required">License Number is required</div>
             <div *ngIf="f.licenseNo.errors.minlength">License Number must be at least 8 characters</div>
+            <div *ngIf="f.licenseNo.errors.maxlength">License Number must not exceed 8 characters</div>
+            <div *ngIf="f.licenseNo.errors.pattern">License Number must be numeric only</div>
           </div>
         </div>
       </div>
@@ -76,6 +78,8 @@
           />
           <div *ngIf="submitted && f.contactNo.errors" class="invalid-feedback">
             <div *ngIf="f.contactNo.errors.required">Contact Number is required</div>
+            <div *ngIf="f.contactNo.errors.minlength">Contact Number too short</div>
+            <div *ngIf="f.contactNo.errors.pattern">Contact Number must be numeric only</div>
           </div>
         </div>
         <div class="col-md-6 form-group">
@@ -84,6 +88,7 @@
           />
           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
             <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.pattern">Bad email</div>
           </div>
         </div>
       </div>

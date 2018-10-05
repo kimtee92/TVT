@@ -30,9 +30,9 @@
       </table>
       <form class="pagination-wrapper">
         <div class="form-group pages">
-          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
-            directionLinks="true" autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination"
-            screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
+            autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page">
           </pagination-controls>
         </div>
         <div class="form-group options pages">
@@ -53,43 +53,46 @@
     </div>
     <div class="col-md-6">
       <card cardTitle="Payment Details">
-        <div class="col-md-12 form-group">
-          <label class="control-label">Name on Card</label>
-          <input type="text" class="form-control" placeholder="John Smith">
-        </div>
-        <div class="col-md-12 form-group">
-          <label class="control-label">Card Number</label>
-          <input type="text" class="form-control" placeholder="111-222-333">
-        </div>
-        <div class="col-md-12 form-group">
-          <label class="control-label">Billing Address</label>
-          <input type="text" class="form-control" placeholder="Street, Suburb, State, Postcode">
-        </div>
-        <div class="col-md-4 form-group">
-          <label class="control-label">CVC</label>
-          <input type="text" class="form-control" placeholder="###">
-        </div>
-        <div class="col-md-4 form-group">
-          <label class="control-label">Month Expiry</label>
-          <select name="select" id="select1" class="form-control">
-            <option value="jan">JAN</option>
-            <option value="feb">FEB</option>
-            <option value="mar">MAR</option>
-            <option value="apr">APR</option>
-            <option value="may">MAY</option>
-            <option value="jun">JUN</option>
-            <option value="jul">JUL</option>
-            <option value="aug">AUG</option>
-            <option value="sep">SEP</option>
-            <option value="oct">OCT</option>
-            <option value="nov">NOV</option>
-            <option value="dec">DEC</option>
-          </select>
-        </div>
-        <div class="col-md-4 form-group">
-          <label class="control-label">Year Expiry</label>
-          <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
-        </div>
+        <form formGroup="paymentForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Name on Card</label>
+            <input type="text" class="form-control" placeholder="John Smith">
+          </div>
+          <div class="col-md-12 form-group">
+            <label class="control-label">Card Number</label>
+            <input type="text" class="form-control" placeholder="111-222-333">
+          </div>
+          <div class="col-md-12 form-group">
+            <label class="control-label">Billing Address</label>
+            <input type="text" class="form-control" placeholder="Street, Suburb, State, Postcode">
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">CVC</label>
+            <input type="text" class="form-control" placeholder="###">
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">Month Expiry</label>
+            <select name="select" id="select1" class="form-control">
+              <option value=""></option>
+              <option value="jan">JAN</option>
+              <option value="feb">FEB</option>
+              <option value="mar">MAR</option>
+              <option value="apr">APR</option>
+              <option value="may">MAY</option>
+              <option value="jun">JUN</option>
+              <option value="jul">JUL</option>
+              <option value="aug">AUG</option>
+              <option value="sep">SEP</option>
+              <option value="oct">OCT</option>
+              <option value="nov">NOV</option>
+              <option value="dec">DEC</option>
+            </select>
+          </div>
+          <div class="col-md-4 form-group">
+            <label class="control-label">Year Expiry</label>
+            <input type="number" min="2018" max="2030" class="form-control" placeholder="YYYY">
+          </div>
+        </form>
       </card>
       <div align="right">
         <a class="btn btn-primary" (click)="onClickPay()">PAY</a>
