@@ -41,7 +41,6 @@ export class PaymentComponent implements OnInit {
     this.settle = this.globals.pending;
     this.loadData();
     for (let item of this.settle) {
-      console.log('ID: ' + item.id + ' ' + item.fine.$numberDecimal);
       this.total = this.total + Number(item.fine.$numberDecimal);
       this.id.push(item.id);
     }
@@ -63,10 +62,8 @@ export class PaymentComponent implements OnInit {
     this.submitted = true;
     // stop here if form is invalid
     if (this.paymentForm.invalid) {
-      console.log("invalid registraion form");
       return;
     }
-    console.log('Pay button');
     this.violationService.pay(this.id)
       .pipe(first())
       .subscribe(

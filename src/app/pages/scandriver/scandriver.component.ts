@@ -50,7 +50,6 @@ export class ScanDriverComponent implements OnInit{
   onSubmit() {
     this.submitted = true;
     if(this.driverForm.invalid){
-      console.log("invalid form");
       return;
     }
 

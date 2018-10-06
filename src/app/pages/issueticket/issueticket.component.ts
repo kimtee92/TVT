@@ -22,7 +22,6 @@ export class IssueticketComponent implements OnInit {
               private violationService: ViolationService,) { }
 
   ngOnInit() {
-    console.log('second: '+this.globals.driver);
     //this.loadData();
     this.ticketForm = this.formBuilder.group({
       violation: [''],
@@ -32,7 +31,6 @@ export class IssueticketComponent implements OnInit {
     this.violationService.getByLicenseAll(this.globals.driver).pipe(first()).subscribe((tableData: any[]) => {
       this.tableData = tableData;
     });
-    console.log(this.tableData);
   }
 
   // convenience getter for easy access to form fields

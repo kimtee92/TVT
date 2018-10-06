@@ -26,7 +26,6 @@ export class ViolationService {
     }
 
     getByLicenseAll(license: string) {
-        console.log(license);
         return this.http.get<Violation[]>(this.api + `/violations/history/` + license);
     }
 
@@ -39,7 +38,6 @@ export class ViolationService {
     // }
 
     pay(id: number[]=[]) {
-        console.log(id);
         return this.http.delete(this.api + `/violations/paybyid/` + id);
     }
 }
