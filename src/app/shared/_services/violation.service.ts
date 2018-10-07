@@ -13,14 +13,6 @@ export class ViolationService {
                     this.api = globals.api;
                 }
 
-    // getAll() {
-    //     return this.http.get<Violation[]>(`/violations`);
-    // }
-
-    // getById(id: number) {
-    //     return this.http.get(this.api + `/violations/` + id);
-    // }
-
     getByLicense(license: string) {
         return this.http.get<Violation[]>(this.api + `/violations/view/` + license);
     }
@@ -29,15 +21,9 @@ export class ViolationService {
         return this.http.get<Violation[]>(this.api + `/violations/history/` + license);
     }
 
-    // register(driver: Violation) {
-    //     return this.http.post(this.api + `/violations/register`, driver);
-    // }
-
-    // update(driver: Violation) {
-    //     return this.http.put(this.api + `/violations/` + driver.id, driver);
-    // }
-
     pay(id: number[]=[]) {
-        return this.http.delete(this.api + `/violations/paybyid/` + id);
+        console.log(this.api);
+        
+        return this.http.get(this.api + `/violations/paybyid/` + id);
     }
 }
