@@ -28,7 +28,6 @@ export class IssueticketComponent implements OnInit {
     private router: Router, ) { }
 
   ngOnInit() {
-    //this.loadData();
     this.ticketForm = this.formBuilder.group({
       licenseNo: [''],
       violation: [''],
@@ -47,10 +46,6 @@ export class IssueticketComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() { return this.ticketForm.controls; }
-
-  loadData() {
-    //this.tableData = this._tablesDataService.DATA;
-  }
 
   pageChanged(pN: number): void {
     this.pageNumber = pN;
