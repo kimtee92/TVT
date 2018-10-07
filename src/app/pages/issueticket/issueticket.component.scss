@@ -1,15 +1,5 @@
 @import "../../shared/theme/conf";
-
-input.form-control {
-    border-radius: 0;
-    border: 1px;
-    border-bottom: 1px solid transparent;
-    background: white;
-    @include transition(all 1s);
-    &:focus {
-        border-bottom: 1px solid $primary;
-    }
-}
+@import "../../pages/register/register.component.scss";
 
 td{
     padding: 3px;

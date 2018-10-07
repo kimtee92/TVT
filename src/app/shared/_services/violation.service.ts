@@ -22,8 +22,10 @@ export class ViolationService {
     }
 
     pay(id: number[]=[]) {
-        console.log(this.api);
-        
         return this.http.get(this.api + `/violations/paybyid/` + id);
+    }
+
+    issueViolations(violations: Violation[]) {
+        return this.http.post(this.api + `/violations/issue`, violations);
     }
 }

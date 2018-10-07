@@ -15,7 +15,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./scandriver.component.scss'],
   providers: [TablesDataService]
 })
-export class ScanDriverComponent implements OnInit{
+export class ScanDriverComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
   currentDriver: Driver;
   driverForm: FormGroup;
@@ -44,27 +44,29 @@ export class ScanDriverComponent implements OnInit{
   get f() { return this.driverForm.controls; }
 
   onClickIssue() {
-    this.router.navigate(["/pages/issueticket"]);
+    if (this.submitted) {
+      this.router.navigate(["/pages/issueticket"]);
+    }
   }
 
   onSubmit() {
     this.submitted = true;
-    if(this.driverForm.invalid){
+    if (this.driverForm.invalid) {
       return;
-    }
-
+    }    
     this.globals.driver = this.driverForm.value.driver;
     this.driverService.getByLicense(this.globals.driver).pipe(first()).subscribe(
       (tableData: Driver) => {
         this.currentDriver = tableData;
         this.myService.myMethod(tableData);
       },
-    error => {
-      swal({
-        type: 'error',
-        title: 'No Data Found',
+      error => {
+        swal({
+          type: 'error',
+          title: 'No Data Found',
+        });
+        this.submitted = false;
       });
-    });
   }
 
 }

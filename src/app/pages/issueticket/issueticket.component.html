@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit(); ticketForm.reset()">
       <table class="table table-bordered table-hover" id="inputViolation">
         <thead>
           <tr>
@@ -10,31 +10,36 @@
           </tr>
         </thead>
         <tbody>
-          <td><input type="text" formControlName="violation" class="form-control" placeholder="Violation"></td>
-          <td><input type="text" formControlName="fine" class="form-control" placeholder="$ 100.00"></td>
-          <td><input type="text" formControlName="remarks" class="form-control" placeholder="Remarks"></td>
+          <tr>
+            <td><input type="text" formControlName="violation" class="form-control"></td>
+            <td><input type="text" formControlName="fine" class="form-control"></td>
+            <td><input type="text" formControlName="remarks" class="form-control"></td>
+          </tr>
+          <tr *ngFor="let item0 of currentTable">
+            <td>{{item0.violation}}</td>
+            <td>${{item0.fine}}</td>
+            <td>{{item0.remarks}}</td>
+          </tr>
         </tbody>
         <tfoot>
           <tr>
             <td style="text-align: left; border-right: 0px" colspan="2">
-              <button class="btn btn-lg btn-warning btn-with-icon" id="addrow">
+              <button class="btn btn-lg btn-warning btn-with-icon" id="addrow" (click)="issueTicket = null">
                 <i class="fa fa-plus fa-fw"></i>Add row</button>
               &nbsp;&nbsp;
-              <button type="submit" class="btn btn-lg btn-default btn-with-icon">
-                <i class="fa fa-remove fa-fw"></i>Delete last</button>
+              <a class="btn btn-lg btn-default btn-with-icon" (click)="onClickRemoveLast()">
+                <i class="fa fa-remove fa-fw"></i>Delete last</a>
             </td>
             <td style="text-align: right;border-left: 0px">
-              <button type="submit" class="btn btn-lg btn-success btn-with-icon">
-                <i class="fa fa-upload fa-fw"></i>Submit</button>
+              <a class="btn btn-lg btn-success btn-with-icon" (click)="onClickSubmit()">
+                <i class="fa fa-upload fa-fw"></i>Submit</a>
             </td>
           </tr>
         </tfoot>
       </table>
     </form>
-
     <button class="btn btn-lg btn-primary btn-with-icon" style="width: 200px" data-toggle="modal" data-target="#myModal">View
       Recent History</button>
-
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
