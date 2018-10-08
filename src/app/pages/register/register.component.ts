@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import swal from 'sweetalert2';
-import { DriverService } from '../../shared/_services';
+import { EnforcerService } from '../../shared/_services';
 import countries from '../../../assets/countries.json';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private driverService: DriverService,
+    private enforcerService: EnforcerService,
     private router: Router,
   ) { }
 
@@ -31,8 +31,7 @@ export class RegisterComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       gender: ['', Validators.required],
-      nationality: ['', Validators.required],
-      licenseNo: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern("^[0-9]*$")]],
+      enforcerNo: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern("^[0-9]*$")]],
       contactNo: ['', [Validators.required, Validators.minLength(7), Validators.pattern("^[0-9]*$")]],
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}")]],
       address: ['', Validators.required]
@@ -52,7 +51,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.driverService.register(this.registerForm.value)
+    this.enforcerService.register(this.registerForm.value)
       .pipe(first())
       .subscribe(
         data => {

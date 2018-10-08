@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Driver } from '../../shared/_models/driver';
+import { Enforcer } from '../../shared/_models';
 import { first } from 'rxjs/operators';
 import { MyService } from '../../shared/_services/myservice';
 import { ViolationService } from '../../shared/_services/violation.service';
@@ -11,7 +11,7 @@ import { ViolationService } from '../../shared/_services/violation.service';
 })
 export class ProfileComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.png';
-  currentUser: Driver;
+  currentUser: any;
   tableData: any[];
   pageSize = 10;
   pageNumber = 1;
@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.myService.myMethod(JSON.parse(sessionStorage.getItem('currentUser')));
-    this.violationService.getByLicenseAll(this.currentUser.licenseNo).pipe(first()).subscribe((tableData: any[]) => {
+    this.violationService.getByLicenseAll(this.currentUser.enforcerNo).pipe(first()).subscribe((tableData: any[]) => {
       this.tableData = tableData;
     });
   }
