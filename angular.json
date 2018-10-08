@@ -36,8 +36,7 @@
               "node_modules/sweetalert2/dist/sweetalert2.js",
               "node_modules/echarts/dist/echarts.min.js",
               "node_modules/echarts/map/js/china.js",
-              "node_modules/echarts/dist/extension/bmap.js",
-              "src/app/shared/theme/echarts/dark.js"
+              "node_modules/echarts/dist/extension/bmap.js"
             ]
           },
           "configurations": {
@@ -90,8 +89,7 @@
               "node_modules/sweetalert2/dist/sweetalert2.js",
               "node_modules/echarts/dist/echarts.min.js",
               "node_modules/echarts/map/js/china.js",
-              "node_modules/echarts/dist/extension/bmap.js",
-              "src/app/shared/theme/echarts/dark.js"
+              "node_modules/echarts/dist/extension/bmap.js"
             ],
             "styles": [
               "node_modules/normalize.css/normalize.css",
