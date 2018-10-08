@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Globals } from '../../shared/globals';
-import { Violation } from '../../shared/_models/violation';
+import { Enforcer } from '../../shared/_models';
 import { ViolationService } from '../../shared/_services/violation.service';
 import swal from 'sweetalert2';
 
@@ -20,6 +20,7 @@ export class IssueticketComponent implements OnInit {
   submitted = false;
   pageSize = 10;
   pageNumber = 1;
+  enforcer: Enforcer = JSON.parse(sessionStorage.getItem('currentUser'));
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,7 +59,7 @@ export class IssueticketComponent implements OnInit {
     }
  
     this.ticketForm.value.licenseNo = this.globals.driver;
-    this.ticketForm.value.enforcerId = this.globals.driver;
+    this.ticketForm.value.enforcerId = this.enforcer.enforcerNo;
     this.currentTable.push(this.ticketForm.value);
     this.submitted = false;
     this.ticketForm.reset()
