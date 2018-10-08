@@ -14,8 +14,6 @@ export class ProfileComponent implements OnDestroy {
   avatarImgSrc: string = 'assets/images/avatar.png';
   currentUser: Driver = this.tabledataservice.DATA;
   subscription: Subscription;
-  pageSize = 10;
-  pageNumber = 1; 
 
   constructor(private myService: MyService,
     private tabledataservice: TablesDataService, ) {
@@ -26,10 +24,6 @@ export class ProfileComponent implements OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe()
-  }
-
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
   }
 
 }

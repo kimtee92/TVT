@@ -18,7 +18,6 @@ export class ViolationService {
     }
 
     getByLicenseAll(license: string) {
-        console.log(this.api + `/violations/history/` + license);
         return this.http.get<Violation[]>(this.api + `/violations/history/` + license);
     }
 
