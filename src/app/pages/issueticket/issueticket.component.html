@@ -16,9 +16,9 @@
             <td><input type="text" formControlName="remarks" class="form-control"></td>
           </tr>
           <tr *ngFor="let item0 of currentTable">
-            <td><input type="text" formControlName="violation" class="form-control" value={{item0.violation}}></td>
-            <td><input type="text" formControlName="violation" class="form-control" value={{item0.fine}}></td>
-            <td><input type="text" formControlName="violation" class="form-control" value={{item0.remarks}}></td>
+            <td>{{item0.violation}}</td>
+            <td>${{item0.fine}}</td>
+            <td>{{item0.remarks}}</td>
           </tr>
         </tbody>
         <tfoot>

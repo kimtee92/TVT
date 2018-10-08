@@ -37,7 +37,6 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}")]],
       address: ['', Validators.required]
     });
-    
   }
 
   // convenience getter for easy access to form fields
