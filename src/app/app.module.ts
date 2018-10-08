@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Globals } from './shared/globals';
 import { MyService } from './shared/_services/myservice'
 import { AuthGuard } from './shared/_guards/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AuthGuard } from './shared/_guards/auth.guard';
     BrowserAnimationsModule,
     FormsModule,
     PagesModule,
-    routing
+    routing, 
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
