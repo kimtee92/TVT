@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Violation } from '../shared/_models/violation';
+import { Violation } from './_models/violation';
 
 @Injectable()
 export class Globals {

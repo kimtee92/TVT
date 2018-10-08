@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Driver } from '../../_models/driver';
-import { MyService } from '../../../shared/_services/myservice'
+import { MyService } from '../../_services/myservice'
 import { TablesDataService } from './tablesData.service';
 import { Subscription } from 'rxjs/Subscription';
 
