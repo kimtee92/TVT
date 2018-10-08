@@ -8,10 +8,5 @@ export let MENU_ITEM = [
         path: 'violations',
         title: 'Violation List',
         icon: 'table'
-    },
-    {
-        path: 'scandriver',
-        title: 'Scan Driver',
-        icon: 'tag'
     }
 ];
