@@ -41,7 +41,7 @@ export class PaymentComponent implements OnInit {
     this.settle = this.globals.pending;
     this.loadData();
     for (let item of this.settle) {
-      this.total = this.total + Number(item.fine.$numberDecimal);
+      this.total = this.total + Number(item.fine);
       this.id.push(item.id);
     }
   }

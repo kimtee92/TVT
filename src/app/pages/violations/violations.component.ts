@@ -61,10 +61,10 @@ export class ViolationsComponent implements OnInit {
     });
     if (event.target.checked) {
       this.settle.push(pending);
-      this.total = this.total + Number(pending.fine.$numberDecimal);
+      this.total = this.total + Number(pending.fine);
     } else {
       this.settle.splice(index, 1);
-      this.total = this.total - Number(pending.fine.$numberDecimal);
+      this.total = this.total - Number(pending.fine);
     }
     this.number = this.settle.length;
     this.globals.pending = this.settle;

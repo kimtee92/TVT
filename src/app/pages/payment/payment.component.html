@@ -16,7 +16,7 @@
             <td>{{item.createdDate.substr(0,10)}} {{item.createdDate.substr(11,8)}}</td>
             <td>{{item.violation}}</td>
             <td>{{item.enforcerId}}</td>
-            <td>${{item.fine.$numberDecimal}}</td>
+            <td>${{item.fine}}</td>
             <td>{{item.remarks}}</td>
           </tr>
         </tbody>
@@ -85,7 +85,7 @@
             <input type="text" formControlName="cvc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvc.errors }">
             <div *ngIf="submitted && f.cvc.errors" class="invalid-feedback">
               <div *ngIf="f.cvc.errors.required">CVC is required</div>
-              <div *ngIf="f.cvc.errors.minlength">CVC must be at least 3 numberss</div>
+              <div *ngIf="f.cvc.errors.minlength">CVC must be at least 3 numbers</div>
               <div *ngIf="f.cvc.errors.pattern">CVC must be numeric only</div>
             </div>
           </div>

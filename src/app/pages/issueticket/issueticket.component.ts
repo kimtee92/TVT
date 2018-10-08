@@ -16,8 +16,8 @@ import swal from 'sweetalert2';
 export class IssueticketComponent implements OnInit {
   ticketForm: FormGroup;
   tableData: any[];
-  currentTable: Violation[] = [];
-
+  currentTable: any[] = [];
+  submitted = false;
   pageSize = 10;
   pageNumber = 1;
 
@@ -30,9 +30,9 @@ export class IssueticketComponent implements OnInit {
   ngOnInit() {
     this.ticketForm = this.formBuilder.group({
       licenseNo: [''],
-      violation: [''],
-      enforcerId: ['test'],
-      fine: [''],
+      violation: ['', Validators.required],
+      enforcerId: [''],
+      fine: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       remarks: ['']
     });
     if (!this.globals.driver) {
@@ -52,13 +52,20 @@ export class IssueticketComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.ticketForm.invalid) {
+      return;
+    }
+ 
     this.ticketForm.value.licenseNo = this.globals.driver;
     this.ticketForm.value.enforcerId = this.globals.driver;
     this.currentTable.push(this.ticketForm.value);
+    this.submitted = false;
+    this.ticketForm.reset()
   }
 
   onClickSubmit() {
-
+    console.log(this.currentTable.values);
     this.violationService.issueViolations(this.currentTable)
       .pipe(first())
       .subscribe(

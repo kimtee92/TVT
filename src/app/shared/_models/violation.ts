@@ -3,7 +3,7 @@ export class Violation {
     licenseNo: string;
     violation: string;
     enforcerId: string;
-    fine: any;
+    fine: number;
     remarks: string;
     settled: boolean;
 }
