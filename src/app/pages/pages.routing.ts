@@ -19,8 +19,6 @@ export const childRoutes: Routes = [
         children: [
             { path: '', redirectTo: 'profile', pathMatch: 'full' },
             { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
-            { path: 'violations', loadChildren: './violations/violations.module#ViolationsModule' },
-            { path: 'payment', loadChildren: './payment/payment.module#PaymentModule' },
             { path: 'scandriver', loadChildren: './scandriver/scandriver.module#ScanDriverModule' },
             { path: 'issueticket', loadChildren: './issueticket/issueticket.module#IssueticketModule' },
         ],
