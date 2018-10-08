@@ -38,6 +38,10 @@ export class PaymentComponent implements OnInit {
       year: ['', Validators.required]
     });
 
+    if (!this.globals.pending) {
+      this.router.navigate(['/pages/violations']);
+    }
+    
     this.settle = this.globals.pending;
     this.loadData();
     for (let item of this.settle) {
