@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Driver } from '../../shared/_models/driver';
-import { DriverService } from '../../shared/_services';
+import { DriverService } from '../../shared/services';
 import { Globals } from '../../shared/globals';
 import { TablesDataService } from './tablesData.service';
-import { MyService } from '../../shared/_services/myservice'
+import { MyService } from '../../shared/services/myservice'
 import swal from 'sweetalert2';
 
 @Component({

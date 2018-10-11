@@ -13,7 +13,7 @@ import { JwtInterceptor, ErrorInterceptor } from '../shared/_helpers';
 import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthenticationService, DriverService, ViolationService, EnforcerService } from '../shared/_services';
+import { AuthenticationService, DriverService, ViolationService, EnforcerService } from '../shared/services';
 
 @NgModule({
     imports: [

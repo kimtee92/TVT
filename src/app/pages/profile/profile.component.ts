@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Enforcer } from '../../shared/_models';
 import { first } from 'rxjs/operators';
-import { MyService } from '../../shared/_services/myservice';
-import { ViolationService } from '../../shared/_services/violation.service';
+import { MyService } from '../../shared/services/myservice';
+import { ViolationService } from '../../shared/services/violation.service';
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +22,7 @@ export class ProfileComponent implements OnInit {
 }
 
   ngOnInit() {
+    // get user data from session
     this.myService.myMethod(JSON.parse(sessionStorage.getItem('currentUser')));
     this.violationService.getByLicenseAll(this.currentUser.enforcerNo).pipe(first()).subscribe((tableData: any[]) => {
       this.tableData = tableData;

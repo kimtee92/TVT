@@ -6,7 +6,7 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Globals } from './shared/globals';
-import { MyService } from './shared/_services/myservice'
+import { MyService } from './shared/services/myservice'
 import { AuthGuard } from './shared/_guards/auth.guard';
 
 @NgModule({

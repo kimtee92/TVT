@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Globals } from '../../shared/globals';
 import { Enforcer } from '../../shared/_models';
-import { ViolationService } from '../../shared/_services/violation.service';
+import { ViolationService } from '../../shared/services/violation.service';
 import swal from 'sweetalert2';
 
 @Component({

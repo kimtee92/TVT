@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import swal from 'sweetalert2';
-import { EnforcerService } from '../../shared/_services';
+import { EnforcerService } from '../../shared/services';
 import countries from '../../../assets/countries.json';
 
 @Component({
