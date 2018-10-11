@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { Violation } from '../../shared/_models/violation';
-import { ViolationService } from '../../shared/_services/violation.service';
+import { ViolationService } from '../../shared/services/violation.service';
 import { Globals } from '../../shared/globals';
 
 @Component({
@@ -37,7 +37,7 @@ export class PaymentComponent implements OnInit {
       month: ['', Validators.required],
       year: ['', Validators.required]
     });
-
+    // if no data to settle return to previous page
     if (!this.settle) {
       this.router.navigate(['/pages/violations']);
     }
@@ -68,6 +68,7 @@ export class PaymentComponent implements OnInit {
     if (this.paymentForm.invalid) {
       return;
     }
+    // pass data to api for backend service
     this.violationService.pay(this.id)
       .pipe(first())
       .subscribe(

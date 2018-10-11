@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import swal from 'sweetalert2';
-import { DriverService } from '../../shared/_services';
+import { DriverService } from '../../shared/services';
 import countries from '../../../assets/countries.json';
 
 @Component({
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
       this.loading = false;
       return;
     }
-
+    
     this.driverService.register(this.registerForm.value)
       .pipe(first())
       .subscribe(

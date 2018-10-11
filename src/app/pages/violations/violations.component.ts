@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Violation } from '../../shared/_models/violation';
 import { Driver } from '../../shared/_models/driver';
 import { first } from 'rxjs/operators';
-import { ViolationService } from '../../shared/_services/violation.service';
+import { ViolationService } from '../../shared/services/violation.service';
 import swal from 'sweetalert2';
 import { Globals } from '../../shared/globals';
 
@@ -60,9 +60,11 @@ export class ViolationsComponent implements OnInit {
       return item.id === pending.id
     });
     if (event.target.checked) {
+      // if checked push row data to settle array and add total fine to pay
       this.settle.push(pending);
       this.total = this.total + Number(pending.fine);
     } else {
+      // if unchecked remove row data in settle array and substract fine to pay
       this.settle.splice(index, 1);
       this.total = this.total - Number(pending.fine);
     }

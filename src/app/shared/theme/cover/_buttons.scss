@@ -1,8 +1,9 @@
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
+.btn:hover,
 {
-    outline: none;
+    color: black;
 }
 
 .btn {
