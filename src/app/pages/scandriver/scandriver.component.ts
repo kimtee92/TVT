@@ -8,7 +8,6 @@ import { Globals } from '../../shared/globals';
 import { TablesDataService } from './tablesData.service';
 import { MyService } from '../../shared/services/myservice'
 import swal from 'sweetalert2';
-import { clipboard } from '../../clipboard';
 
 @Component({
   selector: 'app-scandriver',
@@ -39,7 +38,6 @@ export class ScanDriverComponent implements OnInit {
     this.driverForm = this.formBuilder.group({
       driver: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern("^[0-9]*$")]]
     });
-    clipboard();
   }
 
   // convenience getter for easy access to form fields
