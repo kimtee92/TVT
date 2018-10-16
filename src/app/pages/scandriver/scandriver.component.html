@@ -8,7 +8,7 @@
         <div class="col-md-12 form-group">
           <div class="col-md-6 form-group">
             <label class="control-label">Driver's License</label>
-            <input type="text" formControlName="driver" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.driver.errors }"
+            <input type="text" onfocus="value=''" formControlName="driver" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.driver.errors }"
             />
             <div *ngIf="submitted && f.driver.errors" class="invalid-feedback">
               <div *ngIf="f.driver.errors.required">License Number is required</div>
