@@ -40,6 +40,7 @@ export class ViolationsComponent implements OnInit {
     this.loadData();
   }
 
+  // load blank data to initialise table
   loadData() {
     this.violationService.getByLicense(this.licenseNo).pipe(first()).subscribe((tableData: Violation[]) => {
       this.tableData = tableData;
